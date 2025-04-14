@@ -25,7 +25,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Godwin W. Author</h1>
-								<p>Passionate Backend Developer |secure, scalable, and efficient systems.<br />
+								<p>Passionate Backend Developer |Focused on building secure, scalable, and efficient systems.<br />
 								<a href="https://github.com/gacode0">GitHub</a> 
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 					</header>
 
 				<!-- Main -->
-					<div id="main">Projects
+					<div id="main">
 
 						<!-- Portfolio -->
 <!-- Portfolio -->
@@ -114,28 +114,26 @@
 	</ul>
 </article>
 
+ <!-- Elements -->
+ <article id="elements">
+	<h2 class="major">Elements</h2>
 
-						<!-- Code Sample -->
-<article id="elements">
-	<h2 class="major">Code Sample</h2>
-	<p>Below is a simple example of a Node.js Express route from my backend projects:</p>
-	<pre><code>
-// Update User Profile
-router.put('/users/:id', verifyToken, async (req, res) => {
-  try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, {
-      $set: req.body
-    }, { new: true });
-    res.status(200).json(updatedUser);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-	</code></pre>
-	<p>For more, check out my full codebase on 
-		<a href="https://github.com/gacode0" target="_blank" class="button">GitHub</a>.
-	</p>
-</article>
+	<section>
+		<h3 class="major">Text</h3>
+		<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+		This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+		This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+		<hr />
+		<h2>Heading Level 2</h2>
+		<h3>Heading Level 3</h3>
+		<h4>Heading Level 4</h4>
+		<h5>Heading Level 5</h5>
+		<h6>Heading Level 6</h6>
+		<hr />
+		<h4>Blockquote</h4>
+		<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+		<h4>Preformatted</h4>
+		<pre><code>i = 0;
 
 
 while (!deck.isInOrder()) {
@@ -363,7 +361,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; LGodwin W. Author | G.A_CODE
+						<p class="copyright">&copy; Godwin W. Author | G.A_CODE
 					</footer>
 
 			</div>
