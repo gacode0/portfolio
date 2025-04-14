@@ -55,4 +55,4 @@ This site was built using the [Dimension Template by HTML5 UP](https://html5up.n
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/gacode0/your-portfolio-repo.git
+   git clone https://github.com/gacode0/portfolio.git
