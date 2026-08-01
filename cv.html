@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Godwin W. Author - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #1f2937;
+            background: #fff;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #2563eb;
+            margin-bottom: 20px;
+        }
+        .header-left h1 { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 2px; }
+        .header-left .title { font-size: 13px; color: #2563eb; font-weight: 600; margin-bottom: 8px; }
+        .header-left .company { font-size: 11px; color: #6b7280; }
+        .header-right { text-align: right; font-size: 10px; }
+        .header-right p { margin-bottom: 2px; }
+        .header-right a { color: #2563eb; text-decoration: none; }
+        .social { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; font-size: 10px; }
+        .social a { color: #6b7280; text-decoration: none; }
+        
+        /* Two Column Layout */
+        .two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+        .col h2 { font-size: 11px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px; }
+        
+        /* Sections */
+        .section { margin-bottom: 16px; }
+        .section-title { font-size: 12px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .section-sub { font-size: 10px; color: #6b7280; margin-bottom: 4px; }
+        .section-desc { font-size: 10px; color: #4b5563; line-height: 1.5; }
+        
+        /* Summary */
+        .summary { font-size: 10px; color: #4b5563; line-height: 1.6; margin-bottom: 16px; }
+        
+        /* Skills */
+        .skill-row { margin-bottom: 8px; }
+        .skill-title { font-size: 10px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .skill-desc { font-size: 10px; color: #6b7280; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+        .skill-tag { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-size: 9px; color: #4b5563; }
+        
+        /* Projects */
+        .project { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #e5e7eb; }
+        .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .project-title { font-size: 11px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .project-link { font-size: 9px; color: #2563eb; font-family: 'JetBrains Mono', monospace; }
+        .project-desc { font-size: 10px; color: #6b7280; margin-top: 4px; }
+        
+        /* Achievement List */
+        .achievements { list-style: none; }
+        .achievements li { font-size: 10px; color: #4b5563; padding: 2px 0; }
+        .achievements li:before { content: "• "; color: #2563eb; }
+        
+        /* Footer */
+        .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #e5e7eb; text-align: center; }
+        .footer p { font-size: 9px; color: #9ca3af; }
+        
+        /* Download Button - hidden when printing */
+        .download-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .download-btn:hover { background: #1d4ed8; }
+        
+        @media print {
+            body { padding: 20px; }
+            .download-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1>Godwin W. Author</h1>
+            <p class="title">Senior Software Engineer | Systems Architect | IT Leader</p>
+            <p class="company">ESTECH Digital Systems Limited</p>
+        </div>
+        <div class="header-right">
+            <p><a href="mailto:godwin.author@estech.cloud">godwin.author@estech.cloud</a></p>
+            <p><a href="tel:+2348168513454">+234 816 851 3454</a></p>
+            <p>Lagos, Nigeria</p>
+            <div class="social">
+                <a href="https://github.com/gacode0">GitHub</a>
+                <a href="https://linkedin.com/in/gacode0">LinkedIn</a>
+                <a href="https://estech.cloud">estech.cloud</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Two Column Layout -->
+    <div class="two-col">
+        <!-- Left Column -->
+        <div class="col">
+            <!-- Summary -->
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Backend engineer with production experience building live payment systems and enterprise platforms. Currently heading Intelligence & IT at Mashaco Nigeria while building ESTECH Digital Systems. Specializes in secure backend architecture, payment processing, and scalable microservices.
+                </p>
+            </div>
+            
+            <!-- Experience -->
+            <div class="section">
+                <h2>Experience</h2>
+                
+                <div class="section-title">Head of Intelligence & IT Department</div>
+                <div class="section-sub">Mashaco Nigeria | 2024 - Present</div>
+                <div class="section-desc">
+                    Leading IT operations and intelligence systems. Built and maintain live payment processing infrastructure serving 16+ Nigerian states. Managing security operations and platform development.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Founder & Lead Engineer</div>
+                <div class="section-sub">ESTECH Digital Systems Limited | 2024 - Present</div>
+                <div class="section-desc">
+                    Building multi-service digital platform with internal revenue focus. Started as an idea in 2024, now growing into operational reality with payment and business intelligence services.
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="section">
+                <h2>Education</h2>
+                
+                <div class="section-title">National Diploma in Computer Science</div>
+                <div class="section-sub">Lagos State Polytechnic | 2021-2024 | DISTINCTION</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Backend Development Certification</div>
+                <div class="section-sub">SAIL Innovation Lab | 2024-2025</div>
+            </div>
+            
+            <!-- Key Achievements -->
+            <div class="section">
+                <h2>Key Achievements</h2>
+                <ul class="achievements">
+                    <li>2+ Live Revenue Systems operational</li>
+                    <li>Zero security breaches across all production systems</li>
+                    <li>Live payment infrastructure processing real transactions</li>
+                    <li>16+ Nigerian states covered by platforms</li>
+                    <li>Part-time staff member while pursuing National University degree</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="col">
+            <!-- Technical Skills -->
+            <div class="section">
+                <h2>Technical Skills</h2>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Languages</div>
+                    <div class="skill-desc">Python, JavaScript, Node.js, SQL</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Frameworks</div>
+                    <div class="skill-desc">FastAPI, Express.js, React</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Databases</div>
+                    <div class="skill-desc">PostgreSQL, MongoDB, Redis</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Security</div>
+                    <div class="skill-desc">JWT, Bcrypt, OAuth2, 2FA, SSL/TLS</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">DevOps</div>
+                    <div class="skill-desc">Docker, CI/CD, Linux, Cloudflare</div>
+                </div>
+            </div>
+            
+            <!-- Notable Projects -->
+            <div class="section">
+                <h2>Notable Projects</h2>
+                
+                <div class="project">
+                    <div class="project-title">Mashaco Nigeria Platform</div>
+                    <a href="https://marshalcoreofnigeria.ng" class="project-link" target="_blank">marshalcoreofnigeria.ng</a>
+                    <div class="project-desc">NSCDC-licensed security company platform with live payment processing, RBAC, incident management, and 16+ state coverage.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">SKD Data Center</div>
+                    <div class="project-desc">Integrated ecosystem with data management, business automation, and enterprise payment solutions.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">ESTECH Digital Systems</div>
+                    <a href="https://estech.cloud" class="project-link" target="_blank">estech.cloud</a>
+                    <div class="project-desc">Multi-service digital platform - still evolving and growing from 2024 idea to 2025 operational reality.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">EUKS Express</div>
+                    <a href="https://eukexpress.com" class="project-link" target="_blank">eukexpress.com</a>
+                    <div class="project-desc">Full-stack delivery platform with booking, real-time tracking, and payment gateway integration.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>Godwin W. Author | Senior Software Engineer | Lagos, Nigeria | 2025</p>
+    </div>
+    
+    <!-- Download Button -->
+    <a href="javascript:window.print()" class="download-btn">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</body>
+</html>

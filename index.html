@@ -1,176 +1,656 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Godwin W. Author | Founder & Lead Software Engineer</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Godwin W. Author - Senior Software Engineer & Systems Architect. Building production-ready systems that generate real revenue.">
+    <meta name="keywords" content="Software Engineer, Backend Developer, Full Stack Developer, Node.js, Python, FastAPI, Nigeria">
+    <meta name="author" content="Godwin W. Author">
+    <meta name="robots" content="index, follow">
+    <title>Godwin W. Author | Senior Software Engineer & Systems Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --primary: #00529b;
-            --secondary: #3b82f6;
-            --accent: #10b981;
-            --dark: #1e293b;
-            --gray: #64748b;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #111827;
+            color: #f9fafb;
+            line-height: 1.7;
         }
-        h1 { color: var(--primary) !important; }
-        h2.major { color: var(--primary) !important; border-color: var(--primary) !important; }
-        a { color: var(--secondary) !important; }
-        .live-badge { background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; }
-        .revenue-badge { background: #f59e0b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 16px 0; background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px); border-bottom: 1px solid #1f2937;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #60a5fa; text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #f9fafb; }
+        .nav-cta { background: #2563eb; color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
+        .nav-cta:hover { background: #1d4ed8; }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #9ca3af; }
+        
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: #60a5fa; margin-bottom: 20px; }
+        .hero-badge .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: #60a5fa; }
+        .hero-subtitle { font-size: 1.1rem; color: #9ca3af; margin-bottom: 28px; max-width: 480px; }
+        .hero-stats { display: flex; gap: 40px; margin-bottom: 32px; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #60a5fa; font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+        .btn-primary { background: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #1f2937; color: #f9fafb; border: 1px solid #374151; }
+        .btn-secondary:hover { background: #374151; }
+        
+        /* Code Block */
+        .code-window { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; }
+        .code-header { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid #374151; }
+        .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .code-dot.red { background: #ef4444; }
+        .code-dot.yellow { background: #eab308; }
+        .code-dot.green { background: #22c55e; }
+        .code-title { margin-left: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #6b7280; }
+        .code-body { padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; }
+        .code-line { display: flex; }
+        .line-number { color: #4b5563; width: 24px; text-align: right; margin-right: 16px; }
+        .keyword { color: #c084fc; }
+        .function { color: #60a5fa; }
+        .string { color: #4ade80; }
+        .comment { color: #6b7280; font-style: italic; }
+        .variable { color: #fb923c; }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 12px; }
+        .section-desc { color: #9ca3af; max-width: 500px; margin: 0 auto; }
+        
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .project-card { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+        .project-card:hover { transform: translateY(-4px); border-color: #4b5563; }
+        .project-card.featured { border-color: #2563eb; background: linear-gradient(180deg, rgba(37, 99, 235, 0.1) 0%, #1f2937 100%); }
+        .card-header { padding: 20px; border-bottom: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .card-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .card-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .card-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+        .card-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; }
+        .badge.live { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .badge.revenue { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+        .badge.confidential { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .badge.dev { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .card-body { padding: 20px; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .card-subtitle { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
+        .card-features { list-style: none; margin-bottom: 16px; }
+        .card-features li { padding: 6px 0; color: #9ca3af; font-size: 0.85rem; display: flex; align-items: flex-start; gap: 8px; }
+        .card-features li i { color: #60a5fa; margin-top: 3px; }
+        .card-footer { padding: 16px 20px; border-top: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .tech-stack { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tech-tag { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
+        .card-link { color: #60a5fa; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+        .card-link:hover { text-decoration: underline; }
+        
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .skill-box { background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151; }
+        .skill-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 1.1rem; }
+        .skill-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .skill-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+        .skill-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .skill-icon.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+        .skill-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+        .skill-tags span { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
+        
+        /* Timeline */
+        .timeline { position: relative; max-width: 700px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #374151; transform: translateX(-50%); }
+        .timeline-item { display: flex; margin-bottom: 32px; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
+        .timeline-content { width: 44%; background: #1f2937; padding: 20px; border-radius: 10px; border: 1px solid #374151; }
+        .timeline-dot { position: absolute; left: 50%; top: 20px; width: 12px; height: 12px; background: #60a5fa; border-radius: 50%; transform: translateX(-50%); }
+        .timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; margin-bottom: 6px; }
+        .timeline-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+        .timeline-desc { color: #9ca3af; font-size: 0.8rem; }
+        
+        /* CV Section */
+        .cv-section { background: #0f172a; }
+        .cv-preview { max-width: 800px; margin: 0 auto; background: #1f2937; border-radius: 16px; border: 1px solid #374151; overflow: hidden; }
+        .cv-header { background: #374151; padding: 32px; text-align: center; }
+        .cv-header h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .cv-header p { color: #9ca3af; font-size: 0.9rem; }
+        .cv-body { padding: 32px; }
+        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .cv-col h3 { font-size: 0.9rem; color: #60a5fa; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #374151; }
+        .cv-item { margin-bottom: 12px; }
+        .cv-item-title { font-weight: 600; font-size: 0.85rem; }
+        .cv-item-sub { color: #6b7280; font-size: 0.8rem; margin-bottom: 4px; }
+        .cv-item-desc { color: #9ca3af; font-size: 0.8rem; }
+        .cv-download { text-align: center; margin-top: 24px; }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .contact-box { background: #1f2937; border-radius: 12px; padding: 32px; border: 1px solid #374151; }
+        .contact-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #374151; }
+        .contact-item:last-child { border-bottom: none; }
+        .contact-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; color: #60a5fa; }
+        .contact-info h4 { font-size: 0.9rem; margin-bottom: 2px; }
+        .contact-info p, .contact-info a { color: #9ca3af; text-decoration: none; font-size: 0.85rem; }
+        .contact-info a:hover { color: #60a5fa; }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-link { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none; transition: all 0.2s; }
+        .social-link:hover { background: #2563eb; color: #fff; }
+        .contact-cta { text-align: center; }
+        .contact-cta h3 { font-size: 1.2rem; margin-bottom: 12px; }
+        .contact-cta p { color: #9ca3af; margin-bottom: 24px; }
+        
+        /* Footer */
+        footer { padding: 32px 0; border-top: 1px solid #1f2937; text-align: center; }
+        footer p { color: #6b7280; font-size: 0.85rem; }
+        
+        /* Animations */
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .timeline::before { left: 16px; }
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; text-align: left; padding-left: 40px; }
+            .timeline-content { width: 100%; }
+            .timeline-dot { left: 16px; }
+            .cv-grid, .contact-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            .hero-stats { gap: 24px; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu { position: fixed; top: 60px; left: 0; right: 0; background: #1f2937; padding: 20px; border-bottom: 1px solid #374151; transform: translateY(-100%); opacity: 0; transition: all 0.3s; z-index: 999; }
+        .mobile-menu.open { transform: translateY(0); opacity: 1; }
+        .mobile-menu ul { list-style: none; }
+        .mobile-menu li { padding: 10px 0; }
+        .mobile-menu a { color: #f9fafb; text-decoration: none; font-weight: 500; }
     </style>
 </head>
-<body class="is-preload">
-
-<div id="wrapper">
-
-<header id="header">
-    <div class="logo">
-        <span class="icon fa-rocket" style="color: var(--primary);"></span>
-    </div>
-    <div class="content">
-        <div class="inner">
-            <h1 style="font-size: 2.5em;">Godwin W. Author</h1>
-            <p><strong style="color: var(--secondary); font-size: 1.2em;">Founder & Lead Software Engineer</strong></p>
-            <p style="color: var(--dark);">ESTECH DIGITAL SYSTEMS LIMITED</p>
-            <p style="font-style: italic; color: var(--gray);">Building Autonomous Digital Ecosystems | Securing Digital Futures</p>
-            <p style="margin-top: 20px;">
-                <a href="https://estech.cloud" class="button small" style="background: var(--primary);">🌐 ESTECH <span class="live-badge">LIVE</span></a>
-                <a href="https://eukexpress.com" class="button small" style="background: var(--accent);">🚚 EUKS Express <span class="revenue-badge">REVENUE</span></a>
-                <a href="https://github.com/gacode0" class="button small">GitHub</a>
-            </p>
-        </div>
-    </div>
+<body>
+    <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#journey">Journey</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="container">
+            <a href="#" class="logo">&lt;G.A_CODE/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="cv.html" class="nav-cta">Download CV</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
     </nav>
-</header>
-
-<div id="main">
-
-<article id="about">
-    <h2 class="major">Executive Summary</h2>
-    <p><strong>Backend Engineer turned Founder</strong> with a proven track record of building production-ready systems that generate real revenue. Currently leading multiple live platforms serving real businesses with <strong>millions in transaction volume</strong>.</p>
-    <p>Multiple live revenue-generating systems: <strong>ESTECH</strong>, <strong>EUKS Express</strong>, and <strong>Marshal Core of Nigeria</strong> - all deployed and generating revenue.</p>
-</article>
-
-<article id="journey">
-    <h2 class="major">Professional Journey</h2>
-    <div style="border-left: 3px solid var(--primary); padding-left: 20px; margin-left: 10px;">
-        <p style="margin-bottom: 15px;"><strong style="color: var(--secondary);">▸ 2023</strong><br><strong>Freelance Developer</strong> — Building secure backend systems</p>
-        <p style="margin-bottom: 15px;"><strong style="color: var(--secondary);">▸ 2024</strong><br><strong>Lead Systems Architect</strong> — Production systems serving real businesses</p>
-        <p style="margin-bottom: 15px;"><strong style="color: var(--secondary);">▸ 2024-2025</strong><br><strong>Revenue-Generating Systems</strong> — EUKS Express, payment integration</p>
-        <p style="margin-bottom: 15px;"><strong style="color: var(--secondary);">▸ 2025</strong><br><strong>Founder & Lead Engineer</strong> — Multiple live platforms generating revenue</p>
-    </div>
-</article>
-
-<article id="projects">
-    <h2 class="major">Live Production Systems</h2>
-
-    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
-        <h3 style="color: var(--accent); margin-bottom: 10px;">🚀 EUKS Express - Delivery Management <span class="revenue-badge">REVENUE</span></h3>
-        <p><em>Complete Delivery Platform | <span style="color: var(--accent); font-weight: bold;">LIVE & GENERATING REVENUE</span></em></p>
-        <ul style="text-align: left;">
-            <li><strong>What I Built:</strong> Complete delivery platform with booking, tracking, and payment</li>
-            <li><strong>Business Model:</strong> B2C delivery service handling real orders</li>
-            <li><strong>Features:</strong> Booking system, real-time tracking, payment integration</li>
-            <li><strong>Tech Stack:</strong> Node.js, Express, MongoDB, Payment Gateway</li>
-            <li><strong>Live:</strong> <a href="https://eukexpress.com">eukexpress.com</a></li>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" onclick="this.parentElement.parentElement.classList.remove('open')">About</a></li>
+            <li><a href="#projects" onclick="this.parentElement.parentElement.classList.remove('open')">Projects</a></li>
+            <li><a href="#skills" onclick="this.parentElement.parentElement.classList.remove('open')">Skills</a></li>
+            <li><a href="#journey" onclick="this.parentElement.parentElement.classList.remove('open')">Journey</a></li>
+            <li><a href="cv.html">Download CV</a></li>
         </ul>
     </div>
 
-    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary);">
-        <h3 style="color: var(--primary); margin-bottom: 10px;">ESTECH Digital Ecosystem <span class="live-badge">LIVE</span></h3>
-        <p><em>Full-Stack Digital Platform | <span style="color: var(--primary); font-weight: bold;">LIVE & REVENUE</span></em></p>
-        <ul style="text-align: left;">
-            <li><strong>What I Built:</strong> Complete digital ecosystem with 4 integrated microservices</li>
-            <li><strong>Finance:</strong> Payment processing infrastructure handling real transactions</li>
-            <li><strong>Innovation:</strong> Intelligent recruitment with CV analysis & AI recommendations</li>
-            <li><strong>Tech Stack:</strong> FastAPI, React, PostgreSQL, Redis, Docker</li>
-            <li><strong>Live:</strong> <a href="https://estech.cloud">estech.cloud</a> <em>(business intelligence)</em></li>
-        </ul>
-    </div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Available for opportunities
+                    </div>
+                    <h1>
+                        Building <span>Production-Ready</span><br>
+                        Systems That Scale
+                    </h1>
+                    <p class="hero-subtitle">
+                        Senior Software Engineer with hands-on experience building live payment systems, security platforms, and enterprise applications. Currently heading Intelligence & IT at Mashaco Nigeria while growing ESTECH Digital Systems.
+                    </p>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Live Systems</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">16+</div>
+                            <div class="stat-label">States Covered</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Security Breaches</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> View Live Systems
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">payment-handler.js</span>
+                        </div>
+                        <div class="code-body">
+                            <div class="code-line"><span class="line-number">1</span><span><span class="comment">// Secure payment processing</span></span></div>
+                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">const</span> <span class="variable">gateway</span> = <span class="function">require</span>(<span class="string">'./payment'</span>);</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span><span class="keyword">const</span> <span class="variable">auth</span> = <span class="function">require</span>(<span class="string">'./auth/verify'</span>);</span></div>
+                            <div class="code-line"><span class="line-number">4</span><span></span></div>
+                            <div class="code-line"><span class="line-number">5</span><span><span class="keyword">async function</span> <span class="function">process</span>(<span class="variable">txn</span>) {</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span>&nbsp;&nbsp;<span class="keyword">await</span> <span class="variable">auth</span>.<span class="function">verify</span>(<span class="variable">txn</span>);</span></div>
+                            <div class="code-line"><span class="line-number">7</span><span>&nbsp;&nbsp;<span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="variable">gateway</span>.<span class="function">charge</span>(<span class="variable">txn</span>);</span></div>
+                            <div class="code-line"><span class="line-number">8</span><span>&nbsp;&nbsp;<span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'OK'</span> };</span></div>
+                            <div class="code-line"><span class="line-number">9</span><span>}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style="background: #eff6ff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--secondary);">
-        <h3 style="color: var(--secondary); margin-bottom: 10px;">Marshal Core of Nigeria Limited <span class="revenue-badge">REVENUE</span></h3>
-        <p><em>Security Company Management Platform | <span style="color: var(--secondary); font-weight: bold;">LIVE & GENERATING REVENUE</span></em></p>
-        <ul style="text-align: left;">
-            <li><strong>What I Built:</strong> Complete platform for NSCDC-licensed security company</li>
-            <li><strong>Scope:</strong> End-to-end management across 16+ Nigerian states</li>
-            <li><strong>Features:</strong> RBAC, reporting, incident management, authentication</li>
-            <li><strong>Revenue:</strong> Platform used to manage and process security service contracts</li>
-            <li><strong>Tech Stack:</strong> Node.js, Express, MongoDB</li>
-            <li><strong>Live:</strong> <a href="https://marshalcoreofnigeria.ng">marshalcoreofnigeria.ng</a></li>
-        </ul>
-    </div>
+    <!-- About / Projects -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Who I Am</p>
+                <h2 class="section-title">Backend Engineer with Production Experience</h2>
+                <p class="section-desc">I build systems that handle real money, real users, and real business operations.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Mashaco Nigeria - Primary -->
+                <div class="project-card featured fade-in">
+                    <div class="card-header">
+                        <div class="card-icon blue"><i class="fas fa-shield-alt"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Mashaco Nigeria</h3>
+                        <p class="card-subtitle">Security Company Platform</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> NSCDC-licensed security company platform</li>
+                            <li><i class="fas fa-check"></i> Live payment processing system</li>
+                            <li><i class="fas fa-check"></i> 16+ Nigerian states coverage</li>
+                            <li><i class="fas fa-check"></i> RBAC, incident management, contracts</li>
+                            <li><i class="fas fa-check"></i> My role: Head of Intelligence & IT Dept.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://marshalcoreofnigeria.ng" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- SKD Data Center -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon green"><i class="fas fa-server"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">SKD Data Center</h3>
+                        <p class="card-subtitle">Integrated Ecosystem</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Data management solutions</li>
+                            <li><i class="fas fa-check"></i> Business process automation</li>
+                            <li><i class="fas fa-check"></i> Payment integration</li>
+                            <li><i class="fas fa-check"></i> Enterprise infrastructure</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="#contact" class="card-link">Inquire</a>
+                    </div>
+                </div>
+                
+                <!-- ESTECH Digital -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon purple"><i class="fas fa-globe"></i></div>
+                        <div class="card-badges"><span class="badge dev">Evolving</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">ESTECH Digital Systems</h3>
+                        <p class="card-subtitle">My Registered Company</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Built from idea (2024) → reality (2025)</li>
+                            <li><i class="fas fa-check"></i> Internal revenue generation platform</li>
+                            <li><i class="fas fa-check"></i> Multi-service digital ecosystem</li>
+                            <li><i class="fas fa-check"></i> Actively growing & evolving</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- EUKS Express -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon blue"><i class="fas fa-truck"></i></div>
+                        <div class="card-badges"><span class="badge dev">Reference</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">EUKS Express</h3>
+                        <p class="card-subtitle">Delivery Platform (Past Project)</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Booking, tracking, payment system</li>
+                            <li><i class="fas fa-check"></i> Demonstrates full-stack capability</li>
+                            <li><i class="fas fa-check"></i> Payment gateway integration</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://eukexpress.com" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style="background: #fffbeb; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b;">
-        <h3 style="color: #b45309; margin-bottom: 10px;">⚠️ Enterprise Financial Services Platform <span style="background: #dc2626; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em;">CONFIDENTIAL</span></h3>
-        <ul style="text-align: left;">
-            <li><strong>Scope:</strong> Backend modules for enterprise financial services</li>
-            <li><strong>Security:</strong> Encrypted transactions, secure authentication, compliance</li>
-            <li><strong>Scale:</strong> High-volume transaction processing</li>
-            <li><em>Details available upon NDA verification</em></li>
-        </ul>
-    </div>
-</article>
+    <!-- Skills -->
+    <section id="skills" style="background: #0a0f1a;">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">What I Do</p>
+                <h2 class="section-title">Technical Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-box fade-in">
+                    <div class="skill-icon blue"><i class="fas fa-server"></i></div>
+                    <h3 class="skill-title">Backend Development</h3>
+                    <div class="skill-tags"><span>Python/FastAPI</span><span>Node.js/Express</span><span>REST APIs</span></div>
+                </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon green"><i class="fas fa-database"></i></div>
+                    <h3 class="skill-title">Database Engineering</h3>
+                    <div class="skill-tags"><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span></div>
+                </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon purple"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="skill-title">Security & Auth</h3>
+                    <div class="skill-tags"><span>JWT/Bcrypt</span><span>OAuth2</span><span>SSL/TLS</span></div>
+                </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon orange"><i class="fas fa-credit-card"></i></div>
+                    <h3 class="skill-title">Payment Systems</h3>
+                    <div class="skill-tags"><span>Gateway Integration</span><span>Transaction Processing</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<article id="skills">
-    <h2 class="major">Technical Expertise</h2>
-    <h3>Backend Development</h3><p>Python/FastAPI, Node.js/Express, REST APIs, GraphQL</p>
-    <h3>Database Engineering</h3><p>PostgreSQL, MongoDB, MySQL, Redis, Database Design</p>
-    <h3>Security & Authentication</h3><p>OAuth2, JWT, Bcrypt, 2FA, SSL/TLS, API Security, Encryption</p>
-    <h3>Payment Systems</h3><p>Payment gateway integration, Transaction processing, Financial security</p>
-    <h3>DevOps & Cloud</h3><p>Docker, CI/CD, Linux, Cloudflare, AWS basics, Render deployment</p>
+    <!-- Journey -->
+    <section id="journey">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">My Path</p>
+                <h2 class="section-title">Professional Journey</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">2021-2024</p>
+                        <h3 class="timeline-title">ND Computer Science - DISTINCTION</h3>
+                        <p class="timeline-desc">Lagos State Polytechnic. Graduated with distinction. Developed foundational programming skills.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">2024</p>
+                        <h3 class="timeline-title">SAIL Innovation Lab</h3>
+                        <p class="timeline-desc">Backend Development Certification. Birth of ESTECH idea.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">2024</p>
+                        <h3 class="timeline-title">Mashaco Nigeria</h3>
+                        <p class="timeline-desc">Joined as staff. Now heading Intelligence & IT Department. Built and maintain live payment systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">2025</p>
+                        <h3 class="timeline-title">ESTECH Digital Systems</h3>
+                        <p class="timeline-desc">Started as an idea (2024), now growing into reality. Building internal revenue infrastructure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">Present</p>
+                        <h3 class="timeline-title">National University</h3>
+                        <p class="timeline-desc">Full-time student (2nd Semester) while building systems. Leading IT at Mashaco. Growing ESTECH.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2 class="major">Key Achievements</h2>
-    <ul>
-        <li><strong>3 Live Revenue Systems:</strong> EUKS Express, ESTECH, and Marshal Core all generating revenue</li>
-        <li><strong>Production-Ready:</strong> Multiple systems deployed and serving real businesses</li>
-        <li><strong>Zero Security Breaches:</strong> Security maintained across all production systems</li>
-        <li><strong>Payment Infrastructure:</strong> Built payment systems handling real financial transactions</li>
-    </ul>
+    <!-- CV Section -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Get My CV</p>
+                <h2 class="section-title">Download Resume</h2>
+                <p class="section-desc">One-page ATS-friendly CV ready for your applicant tracking system.</p>
+            </div>
+            <div class="cv-preview fade-in">
+                <div class="cv-header">
+                    <h2>Godwin W. Author</h2>
+                    <p>Senior Software Engineer | Systems Architect | IT Leader</p>
+                    <p>godwin.author@estech.cloud | +234 816 851 3454 | Lagos, Nigeria</p>
+                </div>
+                <div class="cv-body">
+                    <div class="cv-grid">
+                        <div class="cv-col">
+                            <h3>Summary</h3>
+                            <p style="color:#9ca3af;font-size:0.85rem;margin-bottom:20px;">
+                                Backend engineer with production experience building live payment systems and enterprise platforms. Currently heading Intelligence & IT at Mashaco Nigeria while building ESTECH Digital Systems. Specializes in secure backend architecture and scalable microservices.
+                            </p>
+                            
+                            <h3>Experience</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Head of Intelligence & IT Department</p>
+                                <p class="cv-item-sub">Mashaco Nigeria | 2024 - Present</p>
+                                <p class="cv-item-desc">Leading IT operations, building payment systems, managing 16+ state coverage.</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Founder & Lead Engineer</p>
+                                <p class="cv-item-sub">ESTECH Digital Systems Limited | 2024 - Present</p>
+                                <p class="cv-item-desc">Building multi-service platform with internal revenue focus.</p>
+                            </div>
+                            
+                            <h3>Education</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-title">National Diploma in Computer Science</p>
+                                <p class="cv-item-sub">Lagos State Polytechnic | 2021-2024 | DISTINCTION</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Backend Development Certification</p>
+                                <p class="cv-item-sub">SAIL Innovation Lab | 2024-2025</p>
+                            </div>
+                        </div>
+                        <div class="cv-col">
+                            <h3>Technical Skills</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Languages</p>
+                                <p class="cv-item-desc">Python, JavaScript, Node.js, SQL</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Frameworks</p>
+                                <p class="cv-item-desc">FastAPI, Express.js, React</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Databases</p>
+                                <p class="cv-item-desc">PostgreSQL, MongoDB, Redis</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Security</p>
+                                <p class="cv-item-desc">JWT, Bcrypt, OAuth2, 2FA, SSL/TLS</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">DevOps</p>
+                                <p class="cv-item-desc">Docker, CI/CD, Linux, Cloudflare</p>
+                            </div>
+                            
+                            <h3>Key Achievements</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-desc">2+ Live Revenue Systems operational</p>
+                                <p class="cv-item-desc">Zero security breaches</p>
+                                <p class="cv-item-desc">Live payment infrastructure</p>
+                                <p class="cv-item-desc">16+ Nigerian states covered</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cv-download">
+                        <a href="cv.html" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2 class="major">Education & Certifications</h2>
-    <p><strong>National Diploma in Computer Science</strong> — Lagos State Polytechnic | 2021–2024</p>
-    <p><strong>Backend Development Certification</strong> — SAIL Innovation Lab | 2024–2025 | <span style="color: var(--accent); font-weight: bold;">DISTINCTION</span></p>
-</article>
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Get In Touch</p>
+                <h2 class="section-title">Let's Build Something</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-box fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <a href="mailto:godwin.author@estech.cloud">godwin.author@estech.cloud</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-info">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/2348168513454">+234 816 851 3454</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info">
+                            <h4>Location</h4>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/gacode0" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/gacode0" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://t.me/gacode0" class="social-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://www.youtube.com/@G.A_CODE" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-box contact-cta fade-in">
+                    <h3>Open to Opportunities</h3>
+                    <p>Looking for software engineering roles, technical leadership, or consulting involving backend systems, payment infrastructure, or platform architecture.</p>
+                    <a href="https://wa.me/2348168513454?text=Hi%20Godwin,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Start a Conversation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<article id="contact">
-    <h2 class="major">Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:mail.gacode@gmail.com">mail.gacode@gmail.com</a></p>
-    <p><strong>Phone:</strong> +234 816 851 3454</p>
-    <p><a href="https://wa.me/2348168513454" class="button small">WhatsApp</a></p>
-    <ul class="icons">
-        <li><a href="https://github.com/gacode0" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="https://www.linkedin.com/in/gacode0/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="https://t.me/gacode0" class="icon brands fa-telegram"><span class="label">Telegram</span></a></li>
-        <li><a href="https://www.instagram.com/g.a_code" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="https://www.youtube.com/@G.A_CODE" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-    </ul>
-    <p style="margin-top: 30px; font-style: italic; color: var(--gray);">"Ready to build secure, scalable solutions that drive business value."</p>
-</article>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Godwin W. Author | ESTECH Digital Systems Limited | Registered Company</p>
+        </div>
+    </footer>
 
-</div>
-
-<footer id="footer">
-    <p class="copyright">&copy; 2025 Godwin W. Author | ESTECH DIGITAL SYSTEMS LIMITED</p>
-</footer>
-
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
 </body>
 </html>
