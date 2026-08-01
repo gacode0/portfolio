@@ -15,7 +15,7 @@ Building production-ready systems that solve real business problems.
 ### Production Systems Built
 
 - **ESTECH Digital Ecosystem** - Multi-service platform with payment processing, recruitment systems, and business intelligence tools
-- **Elitz Solution** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations
+- **EliteCredit** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations
 - **EUKS Express** - Full-stack delivery management with real-time tracking and payment integration
 - **Marshal Core of Nigeria Limited** - Registered security company platform with live payment processing
 
