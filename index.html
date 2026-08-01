@@ -115,7 +115,19 @@
         .card-link:hover { text-decoration: underline; }
         
         /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 14px;
+            justify-content: center;
+        }
+        @media (max-width: 900px) {
+            .skills-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-grid .skill-box:nth-child(5) { grid-column: 1 / -1; max-width: 300px; margin: 0 auto; }
+        }
         .skill-box { background: #1f2937; border-radius: 10px; padding: 16px; border: 1px solid #374151; }
         .skill-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1rem; }
         .skill-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
@@ -409,7 +421,7 @@
                         <p class="card-subtitle">Security Company Platform</p>
                         <p class="card-role">Head of Intelligence & IT | Certificate & IT Assistant | 2024 - Present (Part-Time)</p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> NSCDC-licensed security company</li>
+                            <li><i class="fas fa-check"></i> Registered security company</li>
                             <li><i class="fas fa-check"></i> Live payment processing system</li>
                             <li><i class="fas fa-check"></i> Growing national coverage</li>
                             <li><i class="fas fa-check"></i> Leading and managing IT teams</li>
@@ -465,28 +477,6 @@
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="card-header">
-                        <div class="card-icon purple"><i class="fas fa-code"></i></div>
-                        <div class="card-badges"><span class="badge dev">Open Source</span></div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">eSTech Systems</h3>
-                        <p class="card-subtitle">Development Project</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Official codebase</li>
-                            <li><i class="fas fa-check"></i> Full-stack implementation</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">React</span>
-                        </div>
-                        <a href="https://github.com/gacode0/estech-systems" class="card-link" target="_blank">GitHub <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
-                    </div>
-                </div>
-                
-                <div class="project-card fade-in">
-                    <div class="card-header">
                         <div class="card-icon purple"><i class="fas fa-heart"></i></div>
                         <div class="card-badges"><span class="badge dev">Backend</span></div>
                     </div>
@@ -529,6 +519,29 @@
                         <a href="https://github.com/gacode0/LibraryAPI" class="card-link" target="_blank">GitHub <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
                     </div>
                 </div>
+                
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon purple"><i class="fas fa-hand-holding-usd"></i></div>
+                        <div class="card-badges"><span class="badge dev">Full-Stack</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Expense Tracker for NGOs</h3>
+                        <p class="card-subtitle">NGO Financial Management</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Financial tracking system</li>
+                            <li><i class="fas fa-check"></i> NGO management tools</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                        <a href="https://github.com/gacode0/expense-tracker-ngo" class="card-link" target="_blank">GitHub <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -565,11 +578,6 @@
                     <div class="skill-icon orange"><i class="fas fa-credit-card"></i></div>
                     <h3 class="skill-title">Payment Systems</h3>
                     <div class="skill-tags"><span>Gateway Integration</span><span>Transaction Processing</span></div>
-                </div>
-                <div class="skill-box fade-in">
-                    <div class="skill-icon yellow"><i class="fas fa-laptop-code"></i></div>
-                    <h3 class="skill-title">Frontend Development</h3>
-                    <div class="skill-tags"><span>React</span><span>HTML/CSS</span><span>JavaScript</span></div>
                 </div>
             </div>
         </div>

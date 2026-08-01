@@ -17,7 +17,7 @@ Building production-ready systems that solve real business problems.
 - **ESTECH Digital Ecosystem** - Multi-service platform with payment processing, recruitment systems, and business intelligence tools
 - **Elitz Solution** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations
 - **EUKS Express** - Full-stack delivery management with real-time tracking and payment integration
-- **Marshal Core of Nigeria Limited** - Security company management platform with live payment processing
+- **Marshal Core of Nigeria Limited** - Registered security company platform with live payment processing
 
 ### Core Skills
 
@@ -27,7 +27,7 @@ Building production-ready systems that solve real business problems.
 - **Databases**: PostgreSQL, MongoDB, Redis
 - **Infrastructure**: Docker, CI/CD, Cloudflare, Linux
 - **Security**: JWT, OAuth2, SSL/TLS, Bcrypt
-- **Tools**: Prompt Engineering, AI Agent Orchestration
+- **AI Tools**: Prompt Engineering, AI Agent Orchestration
 
 ### Professional Experience
 
