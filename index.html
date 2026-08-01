@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Godwin W. Author - Senior Software Engineer & Systems Architect. Building production-ready systems that generate real revenue.">
-    <meta name="keywords" content="Software Engineer, Backend Developer, Full Stack Developer, Node.js, Python, FastAPI, Nigeria">
+    <meta name="description" content="Godwin W. Author - Lead AI Engineer & Prompt Engineer. Building production-ready systems with AI agent orchestration.">
+    <meta name="keywords" content="Lead AI Engineer, Prompt Engineer, Software Engineer, Backend Developer, Node.js, Python, FastAPI, Nigeria">
     <meta name="author" content="Godwin W. Author">
     <meta name="robots" content="index, follow">
-    <title>Godwin W. Author | Senior Software Engineer & Systems Architect</title>
+    <title>Godwin W. Author | Lead AI Engineer & Prompt Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -94,6 +94,7 @@
         .card-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
         .card-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
         .card-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .card-icon.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
         .badge { padding: 3px 8px; border-radius: 4px; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; }
         .badge.live { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
         .badge.revenue { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
@@ -121,6 +122,7 @@
         .skill-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
         .skill-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
         .skill-icon.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+        .skill-icon.red { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
         .skill-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
         .skill-tags span { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; color: #9ca3af; }
@@ -241,10 +243,10 @@
                     </div>
                     <h1>
                         Building <span>Production-Ready</span><br>
-                        Systems That Scale
+                        Systems With AI
                     </h1>
                     <p class="hero-subtitle">
-                        Senior Software Engineer with hands-on experience building live payment systems, security platforms, and enterprise applications. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria.
+                        Lead AI Engineer & Prompt Engineer with expertise in orchestrating AI agents to build systems. I guide AI agents through the development process — from idea to deployment — just like we're doing now. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria.
                     </p>
                     <div class="hero-stats">
                         <div>
@@ -275,18 +277,17 @@
                             <span class="code-dot red"></span>
                             <span class="code-dot yellow"></span>
                             <span class="code-dot green"></span>
-                            <span class="code-title">payment-handler.js</span>
+                            <span class="code-title">ai-agent-prompt.js</span>
                         </div>
                         <div class="code-body">
-                            <div class="code-line"><span class="line-number">1</span><span><span class="comment">// Secure payment processing</span></span></div>
-                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">const</span> <span class="variable">gateway</span> = <span class="function">require</span>(<span class="string">'./payment'</span>);</span></div>
-                            <div class="code-line"><span class="line-number">3</span><span><span class="keyword">const</span> <span class="variable">auth</span> = <span class="function">require</span>(<span class="string">'./auth/verify'</span>);</span></div>
-                            <div class="code-line"><span class="line-number">4</span><span></span></div>
-                            <div class="code-line"><span class="line-number">5</span><span><span class="keyword">async function</span> <span class="function">process</span>(<span class="variable">txn</span>) {</span></div>
-                            <div class="code-line"><span class="line-number">6</span><span>&nbsp;&nbsp;<span class="keyword">await</span> <span class="variable">auth</span>.<span class="function">verify</span>(<span class="variable">txn</span>);</span></div>
-                            <div class="code-line"><span class="line-number">7</span><span>&nbsp;&nbsp;<span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="variable">gateway</span>.<span class="function">charge</span>(<span class="variable">txn</span>);</span></div>
-                            <div class="code-line"><span class="line-number">8</span><span>&nbsp;&nbsp;<span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'OK'</span> };</span></div>
-                            <div class="code-line"><span class="line-number">9</span><span>}</span></div>
+                            <div class="code-line"><span class="line-number">1</span><span><span class="comment">// Leading AI agents to build systems</span></span></div>
+                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">const</span> <span class="variable">agent</span> = <span class="function">createAgent</span>({</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span>&nbsp;&nbsp;<span class="variable">role</span>: <span class="string">'Lead Engineer'</span>,</span></div>
+                            <div class="code-line"><span class="line-number">4</span><span>&nbsp;&nbsp;<span class="variable">task</span>: <span class="string">'Build payment system'</span></span></div>
+                            <div class="code-line"><span class="line-number">5</span><span>});</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span></span></div>
+                            <div class="code-line"><span class="line-number">7</span><span><span class="keyword">await</span> <span class="variable">agent</span>.<span class="function">execute</span>();</span></div>
+                            <div class="code-line"><span class="line-number">8</span><span><span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'Production Ready'</span> };</span></div>
                         </div>
                     </div>
                 </div>
@@ -299,14 +300,14 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-label">Who I Am</p>
-                <h2 class="section-title">Backend Engineer with Production Experience</h2>
-                <p class="section-desc">I build systems that handle real money, real users, and real business operations.</p>
+                <h2 class="section-title">Lead AI Engineer With Production Systems</h2>
+                <p class="section-desc">I build systems that handle real money, real users, and real business operations — guided by AI agent orchestration.</p>
             </div>
             <div class="projects-grid">
                 <!-- ESTECH Digital Systems Limited - PRIMARY -->
                 <div class="project-card featured fade-in">
                     <div class="card-header">
-                        <div class="card-icon blue"><i class="fas fa-globe"></i></div>
+                        <div class="card-icon blue"><i class="fas fa-building"></i></div>
                         <div class="card-badges">
                             <span class="badge live">Live</span>
                             <span class="badge revenue">Revenue</span>
@@ -318,7 +319,6 @@
                         <p class="card-role">Founder & Lead Engineer | 2024 - Present</p>
                         <ul class="card-features">
                             <li><i class="fas fa-check"></i> Building internal revenue infrastructure</li>
-                            <li><i class="fas fa-check"></i> Multi-service digital ecosystem</li>
                             <li><i class="fas fa-check"></i> Started as idea (2024) → operational reality</li>
                             <li><i class="fas fa-check"></i> Full-time priority & focus</li>
                         </ul>
@@ -330,6 +330,66 @@
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- ESTECH Ecosystem -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon blue"><i class="fas fa-layer-group"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">ESTECH Ecosystem</h3>
+                        <p class="card-subtitle">Multi-Service Digital Platform</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Intelligent recruitment with CV analysis & AI recommendations</li>
+                            <li><i class="fas fa-check"></i> Payment processing infrastructure</li>
+                            <li><i class="fas fa-check"></i> Business intelligence tools</li>
+                            <li><i class="fas fa-check"></i> Under ESTECH Digital Systems Limited</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Heritage Trust - Private Banking -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon orange"><i class="fas fa-university"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                            <span class="badge confidential">Confidential</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Heritage Trust</h3>
+                        <p class="card-subtitle">Private Banking Platform (Built for Client)</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Enterprise-grade private banking system</li>
+                            <li><i class="fas fa-check"></i> Multi-tier membership (9 levels: $5K-$1M+)</li>
+                            <li><i class="fas fa-check"></i> KYC compliance & document verification</li>
+                            <li><i class="fas fa-check"></i> Paystack, Flutterwave, OKX, Marqeta integrations</li>
+                            <li><i class="fas fa-check"></i> Crypto trading, virtual/physical cards</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="#contact" class="card-link">Details on NDA</a>
                     </div>
                 </div>
                 
@@ -364,38 +424,10 @@
                     </div>
                 </div>
                 
-                <!-- SKD Data Center -->
-                <div class="project-card fade-in">
-                    <div class="card-header">
-                        <div class="card-icon purple"><i class="fas fa-server"></i></div>
-                        <div class="card-badges">
-                            <span class="badge live">Live</span>
-                            <span class="badge revenue">Revenue</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">SKD Data Center</h3>
-                        <p class="card-subtitle">Integrated Ecosystem</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Data management solutions</li>
-                            <li><i class="fas fa-check"></i> Business process automation</li>
-                            <li><i class="fas fa-check"></i> Payment integration</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <a href="#contact" class="card-link">Inquire</a>
-                    </div>
-                </div>
-                
                 <!-- EUKS Express - Reference -->
                 <div class="project-card fade-in">
                     <div class="card-header">
-                        <div class="card-icon blue"><i class="fas fa-truck"></i></div>
+                        <div class="card-icon purple"><i class="fas fa-truck"></i></div>
                         <div class="card-badges"><span class="badge dev">Reference</span></div>
                     </div>
                     <div class="card-body">
@@ -426,6 +458,11 @@
                 <h2 class="section-title">Technical Expertise</h2>
             </div>
             <div class="skills-grid">
+                <div class="skill-box fade-in">
+                    <div class="skill-icon red"><i class="fas fa-brain"></i></div>
+                    <h3 class="skill-title">Prompt Engineering & AI</h3>
+                    <div class="skill-tags"><span>AI Agent Orchestration</span><span>Prompt Design</span><span>LLM Integration</span></div>
+                </div>
                 <div class="skill-box fade-in">
                     <div class="skill-icon blue"><i class="fas fa-server"></i></div>
                     <h3 class="skill-title">Backend Development</h3>
@@ -494,8 +531,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-year">Present</p>
-                        <h3 class="timeline-title">National University</h3>
-                        <p class="timeline-desc">Full-time student (2nd Semester) while building systems.</p>
+                        <h3 class="timeline-title">National Open University of Nigeria</h3>
+                        <p class="timeline-desc">Direct Entry Computer Science. In Progress.</p>
                     </div>
                 </div>
             </div>
@@ -513,7 +550,7 @@
             <div class="cv-preview fade-in">
                 <div class="cv-header">
                     <h2>Godwin W. Author</h2>
-                    <p>Senior Software Engineer | Systems Architect | IT Leader</p>
+                    <p>Lead AI Engineer & Prompt Engineer | Systems Architect | IT Leader</p>
                     <p>godwin.author@estech.cloud | +234 816 851 3454 | Lagos, Nigeria</p>
                 </div>
                 <div class="cv-body">
@@ -521,7 +558,7 @@
                         <div class="cv-col">
                             <h3>Summary</h3>
                             <p style="color:#9ca3af;font-size:0.8rem;margin-bottom:16px;">
-                                Backend engineer with production experience building live payment systems and enterprise platforms. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria. I train and manage teams, specialize in secure backend architecture.
+                                Lead AI Engineer & Prompt Engineer with expertise in orchestrating AI agents to build production systems. I guide AI agents through the development process — from idea to deployment. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria. I train and manage teams, specialize in secure backend architecture.
                             </p>
                             
                             <h3>Experience</h3>
@@ -542,11 +579,21 @@
                                 <p class="cv-item-sub">Lagos State Polytechnic | 2021-2024 | DISTINCTION</p>
                             </div>
                             <div class="cv-item">
+                                <p class="cv-item-title">Direct Entry Computer Science</p>
+                                <p class="cv-item-sub">National Open University of Nigeria | In Progress</p>
+                            </div>
+                            <div class="cv-item">
                                 <p class="cv-item-title">Backend Development Certification</p>
                                 <p class="cv-item-sub">SAIL Innovation Lab | 2024-2025</p>
                             </div>
                         </div>
                         <div class="cv-col">
+                            <h3>Core Skills</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Prompt Engineering & AI</p>
+                                <p class="cv-item-desc">AI Agent Orchestration, LLM Integration, Prompt Design & Optimization, Training AI agents to build systems</p>
+                            </div>
+                            
                             <h3>Technical Skills</h3>
                             <div class="cv-item">
                                 <p class="cv-item-title">Languages</p>
@@ -572,6 +619,7 @@
                                 <p class="cv-item-desc">Live payment infrastructure</p>
                                 <p class="cv-item-desc">16+ Nigerian states covered</p>
                                 <p class="cv-item-desc">Leading & training teams</p>
+                                <p class="cv-item-desc">AI agent-powered development</p>
                             </div>
                         </div>
                     </div>
@@ -624,7 +672,7 @@
                 </div>
                 <div class="contact-box contact-cta fade-in">
                     <h3>Open to Opportunities</h3>
-                    <p>Looking for software engineering roles, technical leadership, or consulting involving backend systems, payment infrastructure, or platform architecture.</p>
+                    <p>Looking for Lead AI Engineer roles, software engineering positions, technical leadership, or consulting involving AI agent orchestration, backend systems, or payment infrastructure.</p>
                     <a href="https://wa.me/2348168513454?text=Hi%20Godwin,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="btn btn-primary">
                         <i class="fab fa-whatsapp"></i> Start a Conversation
                     </a>
