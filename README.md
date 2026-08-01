@@ -7,7 +7,7 @@ Building production-ready systems that solve real business problems.
 ### Live Projects
 
 - **Portfolio**: https://gacode0.github.io/portfolio
-- **ATS CV**: https://gacode0.github.io/portfolio/cv.html
+- **Resume**: https://gacode0.github.io/portfolio/cv.html
 - **ESTECH Cloud**: https://estech.cloud
 - **EUKS Express**: https://euksexpress.com
 - **Marshal Core**: https://marshalcoreofnigeria.ng
@@ -15,13 +15,15 @@ Building production-ready systems that solve real business problems.
 ### Production Systems Built
 
 - **ESTECH Digital Ecosystem** - Multi-service platform with payment processing, recruitment systems, and business intelligence tools
+- **Elitz Solution** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations
 - **EUKS Express** - Full-stack delivery management with real-time tracking and payment integration
-- **Marshal Core of Nigeria** - Security company management platform serving 16+ Nigerian states with live payment processing
+- **Marshal Core of Nigeria Limited** - Security company management platform with live payment processing
 
 ### Core Skills
 
-- **Languages**: Python, JavaScript, Node.js, SQL
-- **Frameworks**: FastAPI, Express.js, React
+- **Languages**: Python, JavaScript, Node.js, SQL, HTML/CSS
+- **Backend**: Python/FastAPI, Node.js/Express, REST APIs, GraphQL
+- **Frontend**: React, JavaScript, HTML5, CSS3
 - **Databases**: PostgreSQL, MongoDB, Redis
 - **Infrastructure**: Docker, CI/CD, Cloudflare, Linux
 - **Security**: JWT, OAuth2, SSL/TLS, Bcrypt
@@ -30,7 +32,13 @@ Building production-ready systems that solve real business problems.
 ### Professional Experience
 
 - **Founder & Lead Engineer** — ESTECH Digital Systems Limited (2024–Present)
-- **Head of Intelligence & IT** — Marshal Core of Nigeria (2024–Present, Part-Time)
+- **Head of Intelligence & IT** — Marshal Core of Nigeria Limited (2024–Present, Part-Time)
+
+### Education
+
+- **BSc Computer Science** — National Open University of Nigeria (In Progress)
+- **ND Computer Science** — Lagos State Polytechnic (2021-2024, DISTINCTION)
+- **Backend Development Certification** — SAIL Innovation Lab (2024-2025)
 
 ### Contact
 
