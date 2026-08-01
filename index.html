@@ -87,14 +87,13 @@
         /* Projects Grid */
         .projects-grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
+            grid-template-columns: repeat(2, 1fr); 
             gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        @media (max-width: 900px) {
-            .projects-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .projects-grid { grid-template-columns: 1fr; }
+        @media (max-width: 700px) {
+            .projects-grid { grid-template-columns: 1fr; max-width: 100%; }
         }
         .project-card { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
         .project-card:hover { transform: translateY(-4px); border-color: #4b5563; }
@@ -271,12 +270,12 @@
                     </p>
                     <div class="hero-stats">
                         <div>
-                            <div class="stat-number">2+</div>
+                            <div class="stat-number">4</div>
                             <div class="stat-label">Live Systems</div>
                         </div>
                         <div>
-                            <div class="stat-number">16+</div>
-                            <div class="stat-label">States Covered</div>
+                            <div class="stat-number">Full-Stack</div>
+                            <div class="stat-label">Development</div>
                         </div>
                         <div>
                             <div class="stat-number">0</div>
@@ -298,17 +297,21 @@
                             <span class="code-dot red"></span>
                             <span class="code-dot yellow"></span>
                             <span class="code-dot green"></span>
-                            <span class="code-title">ai-agent-prompt.js</span>
+                            <span class="code-title">core-integrations.py</span>
                         </div>
                         <div class="code-body">
-                            <div class="code-line"><span class="line-number">1</span><span><span class="comment">// Building production systems with professional tools</span></span></div>
-                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">const</span> <span class="variable">agent</span> = <span class="function">createAgent</span>({</span></div>
-                            <div class="code-line"><span class="line-number">3</span><span>&nbsp;&nbsp;<span class="variable">role</span>: <span class="string">'Lead Engineer'</span>,</span></div>
-                            <div class="code-line"><span class="line-number">4</span><span>&nbsp;&nbsp;<span class="variable">task</span>: <span class="string">'Build payment system'</span></span></div>
-                            <div class="code-line"><span class="line-number">5</span><span>});</span></div>
-                            <div class="code-line"><span class="line-number">6</span><span></span></div>
-                            <div class="code-line"><span class="line-number">7</span><span><span class="keyword">await</span> <span class="variable">agent</span>.<span class="function">execute</span>();</span></div>
-                            <div class="code-line"><span class="line-number">8</span><span><span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'Production Ready'</span> };</span></div>
+                            <div class="code-line"><span class="line-number">1</span><span><span class="comment"># Security - JWT Authentication</span></span></div>
+                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">def</span> <span class="function">verify_token</span>(<span class="variable">token</span>):</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span>&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">jwt</span>.<span class="function">decode</span>(<span class="variable">token</span>, <span class="variable">SECRET</span>)</span></div>
+                            <div class="code-line"><span class="line-number">4</span><span></span></div>
+                            <div class="code-line"><span class="line-number">5</span><span><span class="comment"># Payment - Paystack Verification</span></span></div>
+                            <div class="code-line"><span class="line-number">6</span><span><span class="variable">paystack</span>.<span class="function">verify</span>(<span class="variable">reference</span>)</span></div>
+                            <div class="code-line"><span class="line-number">7</span><span></span></div>
+                            <div class="code-line"><span class="line-number">8</span><span><span class="comment"># Database - Redis Cache</span></span></div>
+                            <div class="code-line"><span class="line-number">9</span><span><span class="variable">cache</span>.<span class="function">set</span>(<span class="variable">key</span>, <span class="variable">data</span>, <span class="variable">ttl</span>=<span class="string">3600</span>)</span></div>
+                            <div class="code-line"><span class="line-number">10</span><span></span></div>
+                            <div class="code-line"><span class="line-number">11</span><span><span class="comment"># Communication - Send Notification</span></span></div>
+                            <div class="code-line"><span class="line-number">12</span><span><span class="variable">send_email</span>(<span class="variable">user</span>, <span class="variable">message</span>)</span></div>
                         </div>
                     </div>
                 </div>
@@ -348,34 +351,6 @@
                             <span class="tech-tag">FastAPI</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
-                    </div>
-                </div>
-                
-                <!-- ESTECH Ecosystem -->
-                <div class="project-card fade-in">
-                    <div class="card-header">
-                        <div class="card-icon blue"><i class="fas fa-layer-group"></i></div>
-                        <div class="card-badges">
-                            <span class="badge live">Live</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">ESTECH Ecosystem</h3>
-                        <p class="card-subtitle">Multi-Service Digital Platform</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Intelligent recruitment with CV analysis</li>
-                            <li><i class="fas fa-check"></i> Payment processing infrastructure</li>
-                            <li><i class="fas fa-check"></i> Business intelligence tools</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Redis</span>
                         </div>
                         <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
                     </div>
