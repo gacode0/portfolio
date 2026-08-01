@@ -85,7 +85,27 @@
         .section-desc { color: #9ca3af; max-width: 480px; margin: 0 auto; font-size: 0.9rem; }
         
         /* Projects Grid */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+        }
+        .projects-grid .project-card:nth-child(4),
+        .projects-grid .project-card:nth-child(5) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: calc(33.333% - 14px);
+        }
+        @media (max-width: 900px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid .project-card:nth-child(4),
+            .projects-grid .project-card:nth-child(5) { margin: 0; max-width: none; }
+        }
+        @media (max-width: 600px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            .projects-grid .project-card:nth-child(4),
+            .projects-grid .project-card:nth-child(5) { margin: 0; max-width: none; }
+        }
         .project-card { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
         .project-card:hover { transform: translateY(-4px); border-color: #4b5563; }
         .project-card.featured { border-color: #2563eb; background: linear-gradient(180deg, rgba(37, 99, 235, 0.1) 0%, #1f2937 100%); }
@@ -117,16 +137,15 @@
         /* Skills Grid */
         .skills-grid { 
             display: grid; 
-            grid-template-columns: repeat(5, 1fr); 
-            gap: 14px;
-            justify-content: center;
-        }
-        @media (max-width: 900px) {
-            .skills-grid { grid-template-columns: repeat(3, 1fr); }
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 16px;
         }
         @media (max-width: 600px) {
             .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid .skill-box:nth-child(5) { grid-column: 1 / -1; max-width: 300px; margin: 0 auto; }
+            .skills-grid .skill-box:nth-child(5),
+            .skills-grid .skill-box:nth-child(6) { 
+                grid-column: span 1;
+            }
         }
         .skill-box { background: #1f2937; border-radius: 10px; padding: 16px; border: 1px solid #374151; }
         .skill-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1rem; }
@@ -563,6 +582,11 @@
                     <div class="skill-icon blue"><i class="fas fa-server"></i></div>
                     <h3 class="skill-title">Backend Development</h3>
                     <div class="skill-tags"><span>Python/FastAPI</span><span>Node.js/Express</span><span>REST APIs</span></div>
+                </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon yellow"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="skill-title">Frontend Development</h3>
+                    <div class="skill-tags"><span>React</span><span>HTML/CSS</span><span>JavaScript</span></div>
                 </div>
                 <div class="skill-box fade-in">
                     <div class="skill-icon green"><i class="fas fa-database"></i></div>
