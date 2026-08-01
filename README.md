@@ -36,7 +36,7 @@ Building production-ready systems that solve real business problems.
 
 ### Education
 
-- **BSc Computer Science** — National Open University of Nigeria (In Progress, Expected 2028)
+- **BSc Computer Science** — National Open University of Nigeria (Graduated 2025 | Certificate 2028)
 - **ND Computer Science** — Lagos State Polytechnic (2021-2024, DISTINCTION)
 - **Backend Development Certification** — SAIL Innovation Lab (2024-2025)
 
