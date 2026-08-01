@@ -9,14 +9,14 @@ Building production-ready systems that solve real business problems.
 - **Portfolio**: https://gacode0.github.io/portfolio
 - **Resume**: https://gacode0.github.io/portfolio/cv.html
 - **ESTECH Cloud**: https://estech.cloud
-- **EUKS Express**: https://euksexpress.com
+- **EukExpress**: https://eukexpress.com
 - **Marshal Core**: https://marshalcoreofnigeria.ng
 
 ### Production Systems Built
 
 - **ESTECH Digital Ecosystem** - Multi-service platform with payment processing, recruitment systems, and business intelligence tools
 - **EliteCredit** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations
-- **EUKS Express** - Full-stack delivery management with real-time tracking and payment integration
+- **EukExpress** - Full-stack delivery management with real-time tracking and payment integration
 - **Marshal Core of Nigeria Limited** - Registered security company platform with live payment processing
 
 ### Core Skills
