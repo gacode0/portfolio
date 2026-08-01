@@ -3,1144 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Godwin W. Author - Senior Software Engineer & Founder of ESTECH Digital Systems. Building production-ready systems that generate real revenue.">
+    <meta name="description" content="Godwin W. Author - Senior Software Engineer & Systems Architect. Building production-ready systems that generate real revenue.">
     <meta name="keywords" content="Software Engineer, Backend Developer, Full Stack Developer, Node.js, Python, FastAPI, Nigeria">
     <meta name="author" content="Godwin W. Author">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Godwin W. Author | Senior Software Engineer">
-    <meta property="og:description" content="Building Autonomous Digital Ecosystems | Production-Ready Systems">
-    <meta property="og:type" content="website">
-    
     <title>Godwin W. Author | Senior Software Engineer & Systems Architect</title>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
-        :root {
-            --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-card-hover: #1a1a24;
-            --accent-cyan: #00d4ff;
-            --accent-purple: #a855f7;
-            --accent-green: #22c55e;
-            --accent-orange: #f97316;
-            --accent-pink: #ec4899;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --border-color: #1e293b;
-            --gradient-1: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            --gradient-2: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
-            --gradient-3: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            background: #111827;
+            color: #f9fafb;
             line-height: 1.7;
-            overflow-x: hidden;
         }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-cyan);
-            border-radius: 4px;
-        }
-        
-        /* Particles Background */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 1;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
         /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 20px 0;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 16px 0; background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px); border-bottom: 1px solid #1f2937;
         }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #60a5fa; text-decoration: none; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #f9fafb; }
+        .nav-cta { background: #2563eb; color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
+        .nav-cta:hover { background: #1d4ed8; }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 24px; height: 2px; background: #9ca3af; }
         
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: #60a5fa; margin-bottom: 20px; }
+        .hero-badge .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: #60a5fa; }
+        .hero-subtitle { font-size: 1.1rem; color: #9ca3af; margin-bottom: 28px; max-width: 480px; }
+        .hero-stats { display: flex; gap: 40px; margin-bottom: 32px; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #60a5fa; font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+        .btn-primary { background: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #1f2937; color: #f9fafb; border: 1px solid #374151; }
+        .btn-secondary:hover { background: #374151; }
+        
+        /* Code Block */
+        .code-window { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; }
+        .code-header { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid #374151; }
+        .code-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .code-dot.red { background: #ef4444; }
+        .code-dot.yellow { background: #eab308; }
+        .code-dot.green { background: #22c55e; }
+        .code-title { margin-left: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #6b7280; }
+        .code-body { padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; }
+        .code-line { display: flex; }
+        .line-number { color: #4b5563; width: 24px; text-align: right; margin-right: 16px; }
+        .keyword { color: #c084fc; }
+        .function { color: #60a5fa; }
+        .string { color: #4ade80; }
+        .comment { color: #6b7280; font-style: italic; }
+        .variable { color: #fb923c; }
+        
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 12px; }
+        .section-desc { color: #9ca3af; max-width: 500px; margin: 0 auto; }
+        
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .project-card { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+        .project-card:hover { transform: translateY(-4px); border-color: #4b5563; }
+        .project-card.featured { border-color: #2563eb; background: linear-gradient(180deg, rgba(37, 99, 235, 0.1) 0%, #1f2937 100%); }
+        .card-header { padding: 20px; border-bottom: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .card-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .card-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .card-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+        .card-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .badge { padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; }
+        .badge.live { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .badge.revenue { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+        .badge.confidential { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .badge.dev { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .card-body { padding: 20px; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .card-subtitle { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
+        .card-features { list-style: none; margin-bottom: 16px; }
+        .card-features li { padding: 6px 0; color: #9ca3af; font-size: 0.85rem; display: flex; align-items: flex-start; gap: 8px; }
+        .card-features li i { color: #60a5fa; margin-top: 3px; }
+        .card-footer { padding: 16px 20px; border-top: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .tech-stack { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tech-tag { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
+        .card-link { color: #60a5fa; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+        .card-link:hover { text-decoration: underline; }
+        
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .skill-box { background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151; }
+        .skill-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 1.1rem; }
+        .skill-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+        .skill-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+        .skill-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .skill-icon.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+        .skill-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+        .skill-tags span { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
+        
+        /* Timeline */
+        .timeline { position: relative; max-width: 700px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #374151; transform: translateX(-50%); }
+        .timeline-item { display: flex; margin-bottom: 32px; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
+        .timeline-content { width: 44%; background: #1f2937; padding: 20px; border-radius: 10px; border: 1px solid #374151; }
+        .timeline-dot { position: absolute; left: 50%; top: 20px; width: 12px; height: 12px; background: #60a5fa; border-radius: 50%; transform: translateX(-50%); }
+        .timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; margin-bottom: 6px; }
+        .timeline-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+        .timeline-desc { color: #9ca3af; font-size: 0.8rem; }
+        
+        /* CV Section */
+        .cv-section { background: #0f172a; }
+        .cv-preview { max-width: 800px; margin: 0 auto; background: #1f2937; border-radius: 16px; border: 1px solid #374151; overflow: hidden; }
+        .cv-header { background: #374151; padding: 32px; text-align: center; }
+        .cv-header h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .cv-header p { color: #9ca3af; font-size: 0.9rem; }
+        .cv-body { padding: 32px; }
+        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .cv-col h3 { font-size: 0.9rem; color: #60a5fa; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #374151; }
+        .cv-item { margin-bottom: 12px; }
+        .cv-item-title { font-weight: 600; font-size: 0.85rem; }
+        .cv-item-sub { color: #6b7280; font-size: 0.8rem; margin-bottom: 4px; }
+        .cv-item-desc { color: #9ca3af; font-size: 0.8rem; }
+        .cv-download { text-align: center; margin-top: 24px; }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .contact-box { background: #1f2937; border-radius: 12px; padding: 32px; border: 1px solid #374151; }
+        .contact-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #374151; }
+        .contact-item:last-child { border-bottom: none; }
+        .contact-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; color: #60a5fa; }
+        .contact-info h4 { font-size: 0.9rem; margin-bottom: 2px; }
+        .contact-info p, .contact-info a { color: #9ca3af; text-decoration: none; font-size: 0.85rem; }
+        .contact-info a:hover { color: #60a5fa; }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-link { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none; transition: all 0.2s; }
+        .social-link:hover { background: #2563eb; color: #fff; }
+        .contact-cta { text-align: center; }
+        .contact-cta h3 { font-size: 1.2rem; margin-bottom: 12px; }
+        .contact-cta p { color: #9ca3af; margin-bottom: 24px; }
+        
+        /* Footer */
+        footer { padding: 32px 0; border-top: 1px solid #1f2937; text-align: center; }
+        footer p { color: #6b7280; font-size: 0.85rem; }
+        
+        /* Animations */
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .timeline::before { left: 16px; }
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; text-align: left; padding-left: 40px; }
+            .timeline-content { width: 100%; }
+            .timeline-dot { left: 16px; }
+            .cv-grid, .contact-grid { grid-template-columns: 1fr; }
         }
-        
-        .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .nav-cta {
-            background: var(--gradient-1);
-            color: var(--bg-dark) !important;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-        
-        .nav-cta::after {
-            display: none !important;
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            .hero-stats { gap: 24px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
         
         /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 10px;
-        }
-        
-        .menu-toggle span {
-            width: 25px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0 80px;
-            position: relative;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .hero-text {
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            margin-bottom: 24px;
-        }
-        
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero h1 .gradient-text {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-bottom: 40px;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .btn-primary {
-            background: var(--gradient-1);
-            color: var(--bg-dark);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--accent-cyan);
-            background: rgba(0, 212, 255, 0.1);
-        }
-        
-        /* Hero Visual */
-        .hero-visual {
-            position: relative;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
-        
-        .code-window {
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
-        }
-        
-        .code-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 20px;
-            background: rgba(255,255,255,0.02);
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .code-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .code-dot.red { background: #ff5f57; }
-        .code-dot.yellow { background: #febc2e; }
-        .code-dot.green { background: #28c840; }
-        
-        .code-title {
-            margin-left: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        
-        .code-body {
-            padding: 24px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-        
-        .code-line {
-            display: flex;
-        }
-        
-        .line-number {
-            color: var(--text-muted);
-            width: 30px;
-            text-align: right;
-            margin-right: 20px;
-            user-select: none;
-        }
-        
-        .code-content .keyword { color: var(--accent-purple); }
-        .code-content .function { color: var(--accent-cyan); }
-        .code-content .string { color: var(--accent-green); }
-        .code-content .comment { color: var(--text-muted); font-style: italic; }
-        .code-content .variable { color: var(--accent-orange); }
-        
-        /* Floating Elements */
-        .float-element {
-            position: absolute;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .float-element.element-1 {
-            top: 10%;
-            right: -20px;
-            animation-delay: 0s;
-        }
-        
-        .float-element.element-2 {
-            bottom: 20%;
-            left: -30px;
-            animation-delay: 2s;
-        }
-        
-        .float-element i {
-            font-size: 1.2rem;
-        }
-        
-        .float-element.element-1 i { color: var(--accent-green); }
-        .float-element.element-2 i { color: var(--accent-purple); }
-        
-        .float-element span {
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        /* Section Styling */
-        section {
-            padding: 120px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-        
-        .section-desc {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Live Systems Grid */
-        .systems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-        }
-        
-        .system-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .system-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .system-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.3);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-        }
-        
-        .system-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .card-header {
-            padding: 24px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-        
-        .card-icon.cyan { background: rgba(0, 212, 255, 0.15); color: var(--accent-cyan); }
-        .card-icon.purple { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); }
-        .card-icon.green { background: rgba(34, 197, 94, 0.15); color: var(--accent-green); }
-        .card-icon.orange { background: rgba(249, 115, 22, 0.15); color: var(--accent-orange); }
-        
-        .card-badges {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .badge {
-            padding: 6px 12px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .badge.live {
-            background: rgba(34, 197, 94, 0.15);
-            color: var(--accent-green);
-        }
-        
-        .badge.revenue {
-            background: rgba(249, 115, 22, 0.15);
-            color: var(--accent-orange);
-        }
-        
-        .badge.confidential {
-            background: rgba(239, 68, 68, 0.15);
-            color: #ef4444;
-        }
-        
-        .card-body {
-            padding: 24px;
-        }
-        
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .card-subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
-        .card-features {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .card-features li {
-            padding: 8px 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        
-        .card-features li i {
-            color: var(--accent-cyan);
-            margin-top: 4px;
-        }
-        
-        .card-footer {
-            padding: 20px 24px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .tech-stack {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .tech-tag {
-            background: rgba(255,255,255,0.05);
-            padding: 4px 10px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-        
-        .card-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: gap 0.3s ease;
-        }
-        
-        .card-link:hover {
-            gap: 12px;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        
-        .skill-category {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-            transform: translateY(-4px);
-        }
-        
-        .skill-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .skill-icon.cyan { background: rgba(0, 212, 255, 0.15); color: var(--accent-cyan); }
-        .skill-icon.purple { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); }
-        .skill-icon.green { background: rgba(34, 197, 94, 0.15); color: var(--accent-green); }
-        .skill-icon.orange { background: rgba(249, 115, 22, 0.15); color: var(--accent-orange); }
-        .skill-icon.pink { background: rgba(236, 72, 153, 0.15); color: var(--accent-pink); }
-        
-        .skill-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .skill-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .skill-list li {
-            background: rgba(255,255,255,0.05);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 48px;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-            text-align: right;
-        }
-        
-        .timeline-content {
-            width: 45%;
-            background: var(--bg-card);
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 24px;
-            width: 16px;
-            height: 16px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-        }
-        
-        .timeline-year {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            margin-bottom: 8px;
-        }
-        
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .timeline-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        /* CV Section */
-        .cv-section {
-            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(0, 212, 255, 0.03) 100%);
-        }
-        
-        .cv-preview {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        }
-        
-        .cv-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
-            padding: 48px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .cv-header h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-        
-        .cv-header p {
-            color: var(--text-secondary);
-        }
-        
-        .cv-body {
-            padding: 48px;
-        }
-        
-        .cv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-        
-        .cv-column h3 {
-            font-size: 1.1rem;
-            color: var(--accent-cyan);
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .cv-item {
-            margin-bottom: 20px;
-        }
-        
-        .cv-item-title {
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        .cv-item-subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .cv-item-desc {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-        
-        .cv-download {
-            text-align: center;
-            margin-top: 32px;
-        }
-        
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-        
-        .contact-info {
-            padding: 48px;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-        
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(0, 212, 255, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-cyan);
-            font-size: 1.2rem;
-        }
-        
-        .contact-details h4 {
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-        
-        .contact-details p, .contact-details a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        
-        .contact-details a:hover {
-            color: var(--accent-cyan);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-        }
-        
-        .social-link {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background: var(--gradient-1);
-            color: var(--bg-dark);
-            transform: translateY(-4px);
-        }
-        
-        .contact-cta {
-            padding: 48px;
-            background: var(--bg-card);
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        .contact-cta h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        
-        .contact-cta p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 48px 0;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-stats {
-                justify-content: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-visual {
-                display: none;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(odd) {
-                flex-direction: row;
-                text-align: left;
-                padding-left: 50px;
-            }
-            
-            .timeline-content {
-                width: 100%;
-            }
-            
-            .timeline-dot {
-                left: 20px;
-            }
-            
-            .cv-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 24px;
-            }
-            
-            .systems-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header {
-                margin-bottom: 40px;
-            }
-            
-            section {
-                padding: 80px 0;
-            }
-        }
-        
-        /* Mobile Menu Open State */
-        .mobile-menu {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--bg-card);
-            padding: 24px;
-            border-bottom: 1px solid var(--border-color);
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        
-        .mobile-menu.open {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .mobile-menu ul {
-            list-style: none;
-        }
-        
-        .mobile-menu li {
-            padding: 12px 0;
-        }
-        
-        .mobile-menu a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+        .mobile-menu { position: fixed; top: 60px; left: 0; right: 0; background: #1f2937; padding: 20px; border-bottom: 1px solid #374151; transform: translateY(-100%); opacity: 0; transition: all 0.3s; z-index: 999; }
+        .mobile-menu.open { transform: translateY(0); opacity: 1; }
+        .mobile-menu ul { list-style: none; }
+        .mobile-menu li { padding: 10px 0; }
+        .mobile-menu a { color: #f9fafb; text-decoration: none; font-weight: 500; }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <canvas id="particles-canvas"></canvas>
-    
     <!-- Navigation -->
     <nav>
         <div class="container">
             <a href="#" class="logo">&lt;G.A_CODE/&gt;</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#systems">Systems</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#journey">Journey</a></li>
-                <li><a href="#cv" class="nav-cta">View CV</a></li>
+                <li><a href="cv.html" class="nav-cta">Download CV</a></li>
             </ul>
-            <div class="menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
     
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
-            <li><a href="#systems" onclick="toggleMobileMenu()">Systems</a></li>
-            <li><a href="#skills" onclick="toggleMobileMenu()">Skills</a></li>
-            <li><a href="#journey" onclick="toggleMobileMenu()">Journey</a></li>
-            <li><a href="#cv" onclick="toggleMobileMenu()">View CV</a></li>
+            <li><a href="#about" onclick="this.parentElement.parentElement.classList.remove('open')">About</a></li>
+            <li><a href="#projects" onclick="this.parentElement.parentElement.classList.remove('open')">Projects</a></li>
+            <li><a href="#skills" onclick="this.parentElement.parentElement.classList.remove('open')">Skills</a></li>
+            <li><a href="#journey" onclick="this.parentElement.parentElement.classList.remove('open')">Journey</a></li>
+            <li><a href="cv.html">Download CV</a></li>
         </ul>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-grid">
                 <div class="hero-text">
                     <div class="hero-badge">
                         <span class="dot"></span>
                         Available for opportunities
                     </div>
                     <h1>
-                        Building <span class="gradient-text">Production-Ready</span><br>
+                        Building <span>Production-Ready</span><br>
                         Systems That Scale
                     </h1>
                     <p class="hero-subtitle">
-                        Senior Software Engineer & Founder of ESTECH Digital Systems. I build enterprise-grade backend systems, payment infrastructure, and full-stack applications that handle millions in real transactions.
+                        Senior Software Engineer with hands-on experience building live payment systems, security platforms, and enterprise applications. Currently heading Intelligence & IT at Mashaco Nigeria while growing ESTECH Digital Systems.
                     </p>
                     <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">3+</div>
+                        <div>
+                            <div class="stat-number">2+</div>
                             <div class="stat-label">Live Systems</div>
                         </div>
-                        <div class="stat">
+                        <div>
                             <div class="stat-number">16+</div>
                             <div class="stat-label">States Covered</div>
                         </div>
-                        <div class="stat">
+                        <div>
                             <div class="stat-number">0</div>
                             <div class="stat-label">Security Breaches</div>
                         </div>
                     </div>
                     <div class="hero-buttons">
-                        <a href="#systems" class="btn btn-primary">
+                        <a href="#projects" class="btn btn-primary">
                             <i class="fas fa-rocket"></i> View Live Systems
                         </a>
                         <a href="#contact" class="btn btn-secondary">
@@ -1154,104 +272,107 @@
                             <span class="code-dot red"></span>
                             <span class="code-dot yellow"></span>
                             <span class="code-dot green"></span>
-                            <span class="code-title">estech-backend.js</span>
+                            <span class="code-title">payment-handler.js</span>
                         </div>
                         <div class="code-body">
-                            <div class="code-line">
-                                <span class="line-number">1</span>
-                                <span class="code-content">
-                                    <span class="comment">// Production-grade payment system</span>
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">2</span>
-                                <span class="code-content">
-                                    <span class="keyword">const</span> <span class="variable">paymentGateway</span> = <span class="function">require</span>(<span class="string">'./core/payment'</span>);
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">3</span>
-                                <span class="code-content">
-                                    <span class="keyword">const</span> <span class="variable">security</span> = <span class="function">require</span>(<span class="string">'./security/auth'</span>);
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">4</span>
-                                <span class="code-content"><br></span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">5</span>
-                                <span class="code-content">
-                                    <span class="keyword">async function</span> <span class="function">processPayment</span>(<span class="variable">txn</span>) {
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">6</span>
-                                <span class="code-content">
-                                    &nbsp;&nbsp;<span class="keyword">await</span> <span class="variable">security</span>.<span class="function">verify</span>(<span class="variable">txn</span>);
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">7</span>
-                                <span class="code-content">
-                                    &nbsp;&nbsp;<span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="variable">paymentGateway</span>.<span class="function">charge</span>(<span class="variable">txn</span>);
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">8</span>
-                                <span class="code-content">
-                                    &nbsp;&nbsp;<span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'SUCCESS'</span>, <span class="variable">txn</span> };
-                                </span>
-                            </div>
-                            <div class="code-line">
-                                <span class="line-number">9</span>
-                                <span class="code-content">}
-                                </span>
-                            </div>
+                            <div class="code-line"><span class="line-number">1</span><span><span class="comment">// Secure payment processing</span></span></div>
+                            <div class="code-line"><span class="line-number">2</span><span><span class="keyword">const</span> <span class="variable">gateway</span> = <span class="function">require</span>(<span class="string">'./payment'</span>);</span></div>
+                            <div class="code-line"><span class="line-number">3</span><span><span class="keyword">const</span> <span class="variable">auth</span> = <span class="function">require</span>(<span class="string">'./auth/verify'</span>);</span></div>
+                            <div class="code-line"><span class="line-number">4</span><span></span></div>
+                            <div class="code-line"><span class="line-number">5</span><span><span class="keyword">async function</span> <span class="function">process</span>(<span class="variable">txn</span>) {</span></div>
+                            <div class="code-line"><span class="line-number">6</span><span>&nbsp;&nbsp;<span class="keyword">await</span> <span class="variable">auth</span>.<span class="function">verify</span>(<span class="variable">txn</span>);</span></div>
+                            <div class="code-line"><span class="line-number">7</span><span>&nbsp;&nbsp;<span class="keyword">const</span> <span class="variable">result</span> = <span class="keyword">await</span> <span class="variable">gateway</span>.<span class="function">charge</span>(<span class="variable">txn</span>);</span></div>
+                            <div class="code-line"><span class="line-number">8</span><span>&nbsp;&nbsp;<span class="keyword">return</span> { <span class="variable">status</span>: <span class="string">'OK'</span> };</span></div>
+                            <div class="code-line"><span class="line-number">9</span><span>}</span></div>
                         </div>
-                    </div>
-                    <div class="float-element element-1">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Zero Breaches</span>
-                    </div>
-                    <div class="float-element element-2">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Enterprise Security</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About / Projects -->
     <section id="about">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <p class="section-label">Who I Am</p>
-                <h2 class="section-title">Backend Engineer Turned Founder</h2>
-                <p class="section-desc">
-                    I don't just build prototypes. I architect and deploy production systems that handle real money, real users, and real business operations.
-                </p>
+                <h2 class="section-title">Backend Engineer with Production Experience</h2>
+                <p class="section-desc">I build systems that handle real money, real users, and real business operations.</p>
             </div>
-            <div class="systems-grid">
-                <div class="system-card fade-in">
+            <div class="projects-grid">
+                <!-- Mashaco Nigeria - Primary -->
+                <div class="project-card featured fade-in">
                     <div class="card-header">
-                        <div class="card-icon cyan">
-                            <i class="fas fa-building"></i>
-                        </div>
+                        <div class="card-icon blue"><i class="fas fa-shield-alt"></i></div>
                         <div class="card-badges">
                             <span class="badge live">Live</span>
                             <span class="badge revenue">Revenue</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">ESTECH Digital Ecosystem</h3>
-                        <p class="card-subtitle">Business Intelligence Platform</p>
+                        <h3 class="card-title">Mashaco Nigeria</h3>
+                        <p class="card-subtitle">Security Company Platform</p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> 4 integrated microservices</li>
-                            <li><i class="fas fa-check"></i> Payment processing infrastructure</li>
-                            <li><i class="fas fa-check"></i> AI-powered recruitment system</li>
-                            <li><i class="fas fa-check"></i> Secure authentication (OAuth2, JWT)</li>
+                            <li><i class="fas fa-check"></i> NSCDC-licensed security company platform</li>
+                            <li><i class="fas fa-check"></i> Live payment processing system</li>
+                            <li><i class="fas fa-check"></i> 16+ Nigerian states coverage</li>
+                            <li><i class="fas fa-check"></i> RBAC, incident management, contracts</li>
+                            <li><i class="fas fa-check"></i> My role: Head of Intelligence & IT Dept.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <a href="https://marshalcoreofnigeria.ng" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- SKD Data Center -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon green"><i class="fas fa-server"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">SKD Data Center</h3>
+                        <p class="card-subtitle">Integrated Ecosystem</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Data management solutions</li>
+                            <li><i class="fas fa-check"></i> Business process automation</li>
+                            <li><i class="fas fa-check"></i> Payment integration</li>
+                            <li><i class="fas fa-check"></i> Enterprise infrastructure</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="#contact" class="card-link">Inquire</a>
+                    </div>
+                </div>
+                
+                <!-- ESTECH Digital -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon purple"><i class="fas fa-globe"></i></div>
+                        <div class="card-badges"><span class="badge dev">Evolving</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">ESTECH Digital Systems</h3>
+                        <p class="card-subtitle">My Registered Company</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Built from idea (2024) → reality (2025)</li>
+                            <li><i class="fas fa-check"></i> Internal revenue generation platform</li>
+                            <li><i class="fas fa-check"></i> Multi-service digital ecosystem</li>
+                            <li><i class="fas fa-check"></i> Actively growing & evolving</li>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -1259,32 +380,24 @@
                             <span class="tech-tag">FastAPI</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
                         </div>
-                        <a href="https://estech.cloud" class="card-link">
-                            Visit <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
                     </div>
                 </div>
                 
-                <div class="system-card fade-in">
+                <!-- EUKS Express -->
+                <div class="project-card fade-in">
                     <div class="card-header">
-                        <div class="card-icon green">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="card-badges">
-                            <span class="badge live">Live</span>
-                            <span class="badge revenue">Revenue</span>
-                        </div>
+                        <div class="card-icon blue"><i class="fas fa-truck"></i></div>
+                        <div class="card-badges"><span class="badge dev">Reference</span></div>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">EUKS Express</h3>
-                        <p class="card-subtitle">Delivery Management Platform</p>
+                        <p class="card-subtitle">Delivery Platform (Past Project)</p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Complete booking system</li>
-                            <li><i class="fas fa-check"></i> Real-time tracking</li>
+                            <li><i class="fas fa-check"></i> Booking, tracking, payment system</li>
+                            <li><i class="fas fa-check"></i> Demonstrates full-stack capability</li>
                             <li><i class="fas fa-check"></i> Payment gateway integration</li>
-                            <li><i class="fas fa-check"></i> B2C delivery service</li>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -1293,199 +406,91 @@
                             <span class="tech-tag">Express</span>
                             <span class="tech-tag">MongoDB</span>
                         </div>
-                        <a href="https://eukexpress.com" class="card-link">
-                            Visit <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="system-card fade-in">
-                    <div class="card-header">
-                        <div class="card-icon purple">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="card-badges">
-                            <span class="badge live">Live</span>
-                            <span class="badge revenue">Revenue</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Marshal Core of Nigeria</h3>
-                        <p class="card-subtitle">Security Company Management</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> NSCDC-licensed company platform</li>
-                            <li><i class="fas fa-check"></i> 16+ Nigerian states coverage</li>
-                            <li><i class="fas fa-check"></i> RBAC & incident management</li>
-                            <li><i class="fas fa-check"></i> Contract processing system</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <a href="https://marshalcoreofnigeria.ng" class="card-link">
-                            Visit <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="system-card fade-in">
-                    <div class="card-header">
-                        <div class="card-icon orange">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="card-badges">
-                            <span class="badge confidential">Confidential</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Enterprise Financial Services</h3>
-                        <p class="card-subtitle">High-Volume Transaction Platform</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Encrypted transactions</li>
-                            <li><i class="fas fa-check"></i> Enterprise backend modules</li>
-                            <li><i class="fas fa-check"></i> Compliance & security focus</li>
-                            <li><i class="fas fa-check"></i> High-volume processing</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">NDA Required</span>
-                        </div>
-                        <a href="#contact" class="card-link">
-                            Inquire <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a href="https://eukexpress.com" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" style="background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(168, 85, 247, 0.03) 50%, var(--bg-dark) 100%);">
+    <!-- Skills -->
+    <section id="skills" style="background: #0a0f1a;">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <p class="section-label">What I Do</p>
                 <h2 class="section-title">Technical Expertise</h2>
-                <p class="section-desc">
-                    Enterprise-grade skills built through building and maintaining production systems.
-                </p>
             </div>
-            <div class="skills-container">
-                <div class="skill-category fade-in">
-                    <div class="skill-icon cyan">
-                        <i class="fas fa-server"></i>
-                    </div>
+            <div class="skills-grid">
+                <div class="skill-box fade-in">
+                    <div class="skill-icon blue"><i class="fas fa-server"></i></div>
                     <h3 class="skill-title">Backend Development</h3>
-                    <ul class="skill-list">
-                        <li>Python/FastAPI</li>
-                        <li>Node.js/Express</li>
-                        <li>REST APIs</li>
-                        <li>GraphQL</li>
-                    </ul>
+                    <div class="skill-tags"><span>Python/FastAPI</span><span>Node.js/Express</span><span>REST APIs</span></div>
                 </div>
-                
-                <div class="skill-category fade-in">
-                    <div class="skill-icon purple">
-                        <i class="fas fa-database"></i>
-                    </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon green"><i class="fas fa-database"></i></div>
                     <h3 class="skill-title">Database Engineering</h3>
-                    <ul class="skill-list">
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>Redis</li>
-                        <li>MySQL</li>
-                    </ul>
+                    <div class="skill-tags"><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span></div>
                 </div>
-                
-                <div class="skill-category fade-in">
-                    <div class="skill-icon green">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon purple"><i class="fas fa-shield-alt"></i></div>
                     <h3 class="skill-title">Security & Auth</h3>
-                    <ul class="skill-list">
-                        <li>OAuth2/JWT</li>
-                        <li>Bcrypt/2FA</li>
-                        <li>SSL/TLS</li>
-                        <li>API Security</li>
-                    </ul>
+                    <div class="skill-tags"><span>JWT/Bcrypt</span><span>OAuth2</span><span>SSL/TLS</span></div>
                 </div>
-                
-                <div class="skill-category fade-in">
-                    <div class="skill-icon orange">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
+                <div class="skill-box fade-in">
+                    <div class="skill-icon orange"><i class="fas fa-credit-card"></i></div>
                     <h3 class="skill-title">Payment Systems</h3>
-                    <ul class="skill-list">
-                        <li>Gateway Integration</li>
-                        <li>Transaction Processing</li>
-                        <li>Financial Security</li>
-                        <li>Payment APIs</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category fade-in">
-                    <div class="skill-icon pink">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="skill-title">DevOps & Cloud</h3>
-                    <ul class="skill-list">
-                        <li>Docker</li>
-                        <li>CI/CD</li>
-                        <li>Linux</li>
-                        <li>Cloudflare/AWS</li>
-                    </ul>
+                    <div class="skill-tags"><span>Gateway Integration</span><span>Transaction Processing</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Journey Section -->
+    <!-- Journey -->
     <section id="journey">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <p class="section-label">My Path</p>
                 <h2 class="section-title">Professional Journey</h2>
-                <p class="section-desc">
-                    From freelance developer to building systems that serve real businesses.
-                </p>
             </div>
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-year">2023</p>
-                        <h3 class="timeline-title">Freelance Developer</h3>
-                        <p class="timeline-desc">Building secure backend systems for clients. Started specializing in payment integrations and authentication systems.</p>
+                        <p class="timeline-year">2021-2024</p>
+                        <h3 class="timeline-title">ND Computer Science</h3>
+                        <p class="timeline-desc">Lagos State Polytechnic. Developed foundational programming skills and began exploring backend development.</p>
                     </div>
                 </div>
-                
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-year">2024</p>
-                        <h3 class="timeline-title">Lead Systems Architect</h3>
-                        <p class="timeline-desc">Architecting production systems serving real businesses. Led development of multi-service platforms.</p>
+                        <h3 class="timeline-title">Tech Training & SAIL Lab</h3>
+                        <p class="timeline-desc">Backend Development Certification with DISTINCTION. Birth of ESTECH idea.</p>
                     </div>
                 </div>
-                
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-year">2024-2025</p>
-                        <h3 class="timeline-title">Revenue-Generating Systems</h3>
-                        <p class="timeline-desc">Deployed EUKS Express delivery platform with payment integration. Built Marshal Core management system.</p>
+                        <p class="timeline-year">2024</p>
+                        <h3 class="timeline-title">Mashaco Nigeria</h3>
+                        <p class="timeline-desc">Joined as staff. Now heading Intelligence & IT Department. Built and maintain live payment systems.</p>
                     </div>
                 </div>
-                
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <p class="timeline-year">2025</p>
-                        <h3 class="timeline-title">Founder & Lead Engineer</h3>
-                        <p class="timeline-desc">Founded ESTECH Digital Systems Limited. Multiple live platforms generating revenue across Nigeria.</p>
+                        <h3 class="timeline-title">ESTECH Digital Systems</h3>
+                        <p class="timeline-desc">Started as an idea (2024), now growing into reality. Building internal revenue infrastructure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-year">Present</p>
+                        <h3 class="timeline-title">National University</h3>
+                        <p class="timeline-desc">Full-time student (2nd Semester) while building systems. Leading IT at Mashaco. Growing ESTECH.</p>
                     </div>
                 </div>
             </div>
@@ -1495,49 +500,49 @@
     <!-- CV Section -->
     <section id="cv" class="cv-section">
         <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label">Download</p>
-                <h2 class="section-title">Curriculum Vitae</h2>
-                <p class="section-desc">
-                    ATS-friendly CV ready for your applicant tracking system.
-                </p>
+            <div class="section-header">
+                <p class="section-label">Get My CV</p>
+                <h2 class="section-title">Download Resume</h2>
+                <p class="section-desc">One-page ATS-friendly CV ready for your applicant tracking system.</p>
             </div>
             <div class="cv-preview fade-in">
                 <div class="cv-header">
                     <h2>Godwin W. Author</h2>
-                    <p>Senior Software Engineer | Systems Architect | Founder</p>
+                    <p>Senior Software Engineer | Systems Architect | IT Leader</p>
                     <p>mail.gacode@gmail.com | +234 816 851 3454 | Lagos, Nigeria</p>
                 </div>
                 <div class="cv-body">
                     <div class="cv-grid">
-                        <div class="cv-column">
-                            <h3><i class="fas fa-bullseye"></i> Summary</h3>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">
-                                Backend Engineer turned Founder with proven track record of building production-ready systems handling millions in transaction volume. Specializes in secure backend architecture, payment systems, and scalable microservices.
+                        <div class="cv-col">
+                            <h3>Summary</h3>
+                            <p style="color:#9ca3af;font-size:0.85rem;margin-bottom:20px;">
+                                Backend engineer with production experience building live payment systems and enterprise platforms. Currently heading Intelligence & IT at Mashaco Nigeria while building ESTECH Digital Systems. Specializes in secure backend architecture and scalable microservices.
                             </p>
                             
-                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <h3>Experience</h3>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Head of Intelligence & IT Department</p>
+                                <p class="cv-item-sub">Mashaco Nigeria | 2024 - Present</p>
+                                <p class="cv-item-desc">Leading IT operations, building payment systems, managing 16+ state coverage.</p>
+                            </div>
+                            <div class="cv-item">
+                                <p class="cv-item-title">Founder & Lead Engineer</p>
+                                <p class="cv-item-sub">ESTECH Digital Systems Limited | 2024 - Present</p>
+                                <p class="cv-item-desc">Building multi-service platform with internal revenue focus.</p>
+                            </div>
+                            
+                            <h3>Education</h3>
                             <div class="cv-item">
                                 <p class="cv-item-title">National Diploma in Computer Science</p>
-                                <p class="cv-item-subtitle">Lagos State Polytechnic | 2021-2024</p>
+                                <p class="cv-item-sub">Lagos State Polytechnic | 2021-2024</p>
                             </div>
                             <div class="cv-item">
                                 <p class="cv-item-title">Backend Development Certification</p>
-                                <p class="cv-item-subtitle">SAIL Innovation Lab | 2024-2025 | DISTINCTION</p>
-                            </div>
-                            
-                            <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
-                            <div class="cv-item">
-                                <ul style="color: var(--text-secondary); font-size: 0.85rem; margin-left: 20px;">
-                                    <li>3 Live Revenue Systems deployed and operational</li>
-                                    <li>Zero security breaches across all production systems</li>
-                                    <li>Payment infrastructure handling real financial transactions</li>
-                                    <li>ESTECH ecosystem serving users across Africa</li>
-                                </ul>
+                                <p class="cv-item-sub">SAIL Innovation Lab | 2024-2025 | DISTINCTION</p>
                             </div>
                         </div>
-                        <div class="cv-column">
-                            <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                        <div class="cv-col">
+                            <h3>Technical Skills</h3>
                             <div class="cv-item">
                                 <p class="cv-item-title">Languages</p>
                                 <p class="cv-item-desc">Python, JavaScript, Node.js, SQL</p>
@@ -1552,31 +557,25 @@
                             </div>
                             <div class="cv-item">
                                 <p class="cv-item-title">Security</p>
-                                <p class="cv-item-desc">OAuth2, JWT, Bcrypt, 2FA, SSL/TLS</p>
+                                <p class="cv-item-desc">JWT, Bcrypt, OAuth2, 2FA, SSL/TLS</p>
                             </div>
                             <div class="cv-item">
                                 <p class="cv-item-title">DevOps</p>
-                                <p class="cv-item-desc">Docker, CI/CD, Linux, Cloudflare, AWS</p>
+                                <p class="cv-item-desc">Docker, CI/CD, Linux, Cloudflare</p>
                             </div>
                             
-                            <h3><i class="fas fa-project-diagram"></i> Notable Projects</h3>
+                            <h3>Key Achievements</h3>
                             <div class="cv-item">
-                                <p class="cv-item-title">ESTECH Digital Ecosystem</p>
-                                <p class="cv-item-desc">Multi-service platform with payment, recruitment, and business intelligence modules.</p>
-                            </div>
-                            <div class="cv-item">
-                                <p class="cv-item-title">EUKS Express</p>
-                                <p class="cv-item-desc">Full-stack delivery platform with real-time tracking and payment integration.</p>
-                            </div>
-                            <div class="cv-item">
-                                <p class="cv-item-title">Marshal Core Platform</p>
-                                <p class="cv-item-desc">Security company management system serving 16+ Nigerian states.</p>
+                                <p class="cv-item-desc">2+ Live Revenue Systems operational</p>
+                                <p class="cv-item-desc">Zero security breaches</p>
+                                <p class="cv-item-desc">Live payment infrastructure</p>
+                                <p class="cv-item-desc">16+ Nigerian states covered</p>
                             </div>
                         </div>
                     </div>
                     <div class="cv-download">
-                        <a href="mailto:mail.gacode@gmail.com?subject=CV Request&body=I would like to request your full CV and portfolio." class="btn btn-primary">
-                            <i class="fas fa-download"></i> Request Full CV
+                        <a href="cv.html" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
                 </div>
@@ -1584,76 +583,47 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <div class="section-header fade-in">
+            <div class="section-header">
                 <p class="section-label">Get In Touch</p>
                 <h2 class="section-title">Let's Build Something</h2>
-                <p class="section-desc">
-                    Ready to discuss how I can contribute to your team or project.
-                </p>
             </div>
             <div class="contact-grid">
-                <div class="contact-info fade-in">
+                <div class="contact-box fade-in">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info">
                             <h4>Email</h4>
                             <a href="mailto:mail.gacode@gmail.com">mail.gacode@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-details">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-info">
                             <h4>WhatsApp</h4>
                             <a href="https://wa.me/2348168513454">+234 816 851 3454</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info">
                             <h4>Location</h4>
                             <p>Lagos, Nigeria</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Company</h4>
-                            <p>ESTECH Digital Systems Limited</p>
-                        </div>
-                    </div>
                     <div class="social-links">
-                        <a href="https://github.com/gacode0" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/gacode0/" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://t.me/gacode0" class="social-link" title="Telegram">
-                            <i class="fab fa-telegram-plane"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@G.A_CODE" class="social-link" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/g.a_code" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <a href="https://github.com/gacode0" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/gacode0" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://t.me/gacode0" class="social-link" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://www.youtube.com/@G.A_CODE" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="contact-cta fade-in">
+                <div class="contact-box contact-cta fade-in">
                     <h3>Open to Opportunities</h3>
-                    <p>Looking for senior software engineering roles, technical leadership positions, or consulting engagements involving backend systems, payment infrastructure, or platform architecture.</p>
-                    <a href="https://wa.me/2348168513454?text=Hi%20Godwin,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20opportunity." class="btn btn-primary">
+                    <p>Looking for software engineering roles, technical leadership, or consulting involving backend systems, payment infrastructure, or platform architecture.</p>
+                    <a href="https://wa.me/2348168513454?text=Hi%20Godwin,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="btn btn-primary">
                         <i class="fab fa-whatsapp"></i> Start a Conversation
                     </a>
                 </div>
@@ -1664,136 +634,22 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Godwin W. Author | ESTECH Digital Systems Limited | Built with precision</p>
+            <p>&copy; 2025 Godwin W. Author | ESTECH Digital Systems Limited | Registered Company</p>
         </div>
     </footer>
 
     <script>
-        // Particles Background
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.opacity = Math.random() * 0.5 + 0.1;
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
-                ctx.fill();
-            }
-        }
-        
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 15000));
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function connectParticles() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            
-            connectParticles();
-            requestAnimationFrame(animateParticles);
-        }
-        
-        initParticles();
-        animateParticles();
-        
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         
-        // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('open');
-        }
-        
-        // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
-        });
-        
-        // Nav background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 10, 15, 0.95)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 15, 0.8)';
-            }
         });
     </script>
 </body>

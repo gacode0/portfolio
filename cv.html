@@ -3,551 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Godwin W. Author - Senior Software Engineer CV/Resume">
     <meta name="robots" content="noindex, nofollow">
-    <title>Godwin W. Author | Senior Software Engineer | CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Godwin W. Author - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --accent: #16213e;
-            --highlight: #0f3460;
-            --cyan: #00d4ff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
-            --border: #e5e7eb;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            font-size: 14px;
-        }
-        
-        .cv-container {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #1f2937;
+            background: #fff;
             max-width: 850px;
             margin: 0 auto;
             padding: 40px;
         }
         
         /* Header */
-        .cv-header {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding-bottom: 30px;
-            border-bottom: 3px solid var(--cyan);
-            margin-bottom: 30px;
-        }
-        
-        .header-left h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
-        }
-        
-        .header-left .title {
-            font-size: 16px;
-            color: var(--cyan);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .header-left .company {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        
-        .header-right {
-            text-align: right;
-        }
-        
-        .header-right p {
-            margin-bottom: 4px;
-            font-size: 13px;
-        }
-        
-        .header-right a {
-            color: var(--highlight);
-            text-decoration: none;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 12px;
-            justify-content: flex-end;
-            margin-top: 12px;
-        }
-        
-        .social-links a {
-            color: var(--text-light);
-            font-size: 14px;
-        }
-        
-        /* Sections */
-        .section {
-            margin-bottom: 28px;
-        }
-        
-        .section-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 16px;
-        }
-        
-        /* Summary */
-        .summary {
-            font-size: 14px;
-            color: var(--text);
-            line-height: 1.7;
-        }
-        
-        /* Two Column Layout */
-        .two-column {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-        }
-        
-        /* Experience */
-        .experience-item {
+            padding-bottom: 16px;
+            border-bottom: 2px solid #2563eb;
             margin-bottom: 20px;
         }
+        .header-left h1 { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 2px; }
+        .header-left .title { font-size: 13px; color: #2563eb; font-weight: 600; margin-bottom: 8px; }
+        .header-left .company { font-size: 11px; color: #6b7280; }
+        .header-right { text-align: right; font-size: 10px; }
+        .header-right p { margin-bottom: 2px; }
+        .header-right a { color: #2563eb; text-decoration: none; }
+        .social { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; font-size: 10px; }
+        .social a { color: #6b7280; text-decoration: none; }
         
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
+        /* Two Column Layout */
+        .two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; }
+        .col h2 { font-size: 11px; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px; }
         
-        .exp-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--primary);
-        }
+        /* Sections */
+        .section { margin-bottom: 16px; }
+        .section-title { font-size: 12px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .section-sub { font-size: 10px; color: #6b7280; margin-bottom: 4px; }
+        .section-desc { font-size: 10px; color: #4b5563; line-height: 1.5; }
         
-        .exp-date {
-            font-size: 12px;
-            color: var(--text-light);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .exp-company {
-            font-size: 13px;
-            color: var(--highlight);
-            margin-bottom: 8px;
-        }
-        
-        .exp-desc {
-            font-size: 13px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+        /* Summary */
+        .summary { font-size: 10px; color: #4b5563; line-height: 1.6; margin-bottom: 16px; }
         
         /* Skills */
-        .skill-category {
-            margin-bottom: 16px;
-        }
-        
-        .skill-category h4 {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        
-        .skill-tag {
-            background: #f3f4f6;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: var(--text);
-        }
+        .skill-row { margin-bottom: 8px; }
+        .skill-title { font-size: 10px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .skill-desc { font-size: 10px; color: #6b7280; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+        .skill-tag { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-size: 9px; color: #4b5563; }
         
         /* Projects */
-        .project-item {
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px dashed var(--border);
-        }
+        .project { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #e5e7eb; }
+        .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .project-title { font-size: 11px; font-weight: 600; color: #111827; margin-bottom: 2px; }
+        .project-link { font-size: 9px; color: #2563eb; font-family: 'JetBrains Mono', monospace; }
+        .project-desc { font-size: 10px; color: #6b7280; margin-top: 4px; }
         
-        .project-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+        /* Achievement List */
+        .achievements { list-style: none; }
+        .achievements li { font-size: 10px; color: #4b5563; padding: 2px 0; }
+        .achievements li:before { content: "• "; color: #2563eb; }
         
-        .project-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
+        /* Footer */
+        .footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #e5e7eb; text-align: center; }
+        .footer p { font-size: 9px; color: #9ca3af; }
         
-        .project-link {
-            font-size: 12px;
-            color: var(--cyan);
-            text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .project-desc {
-            font-size: 13px;
-            color: var(--text-light);
-            margin-top: 6px;
-        }
-        
-        .project-tech {
-            display: flex;
-            gap: 6px;
-            margin-top: 8px;
-        }
-        
-        /* Education */
-        .edu-item {
-            margin-bottom: 12px;
-        }
-        
-        .edu-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .edu-subtitle {
-            font-size: 13px;
-            color: var(--text-light);
-        }
-        
-        .edu-date {
-            font-size: 12px;
-            color: var(--text-light);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        /* Achievements */
-        .achievement-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            margin-bottom: 10px;
-            font-size: 13px;
-        }
-        
-        .achievement-item i {
-            color: var(--cyan);
-            margin-top: 3px;
-        }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
-            .cv-container {
-                padding: 0;
-                max-width: 100%;
-            }
-            
-            .no-print {
-                display: none;
-            }
-        }
-        
-        /* Download Button */
+        /* Download Button - hidden when printing */
         .download-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            padding: 14px 24px;
-            border-radius: 50px;
+            bottom: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+            font-size: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
+        .download-btn:hover { background: #1d4ed8; }
         
-        .download-btn:hover {
-            background: var(--highlight);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-        }
-        
-        @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            
-            .cv-header {
-                flex-direction: column;
-            }
-            
-            .header-right {
-                text-align: left;
-                margin-top: 20px;
-            }
-            
-            .social-links {
-                justify-content: flex-start;
-            }
+        @media print {
+            body { padding: 20px; }
+            .download-btn { display: none; }
         }
     </style>
 </head>
 <body>
-    <div class="cv-container">
-        <!-- Header -->
-        <header class="cv-header">
-            <div class="header-left">
-                <h1>Godwin W. Author</h1>
-                <p class="title">Senior Software Engineer | Systems Architect | Founder</p>
-                <p class="company">ESTECH Digital Systems Limited</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1>Godwin W. Author</h1>
+            <p class="title">Senior Software Engineer | Systems Architect | IT Leader</p>
+            <p class="company">ESTECH Digital Systems Limited</p>
+        </div>
+        <div class="header-right">
+            <p><a href="mailto:mail.gacode@gmail.com">mail.gacode@gmail.com</a></p>
+            <p><a href="tel:+2348168513454">+234 816 851 3454</a></p>
+            <p>Lagos, Nigeria</p>
+            <div class="social">
+                <a href="https://github.com/gacode0">GitHub</a>
+                <a href="https://linkedin.com/in/gacode0">LinkedIn</a>
+                <a href="https://estech.cloud">estech.cloud</a>
             </div>
-            <div class="header-right">
-                <p><a href="mailto:mail.gacode@gmail.com">mail.gacode@gmail.com</a></p>
-                <p><a href="tel:+2348168513454">+234 816 851 3454</a></p>
-                <p>Lagos, Nigeria</p>
-                <div class="social-links">
-                    <a href="https://github.com/gacode0">GitHub</a>
-                    <a href="https://linkedin.com/in/gacode0">LinkedIn</a>
-                    <a href="https://estech.cloud">estech.cloud</a>
-                </div>
-            </div>
-        </header>
-        
-        <!-- Summary -->
-        <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="summary">
-                Backend Engineer turned Founder with a proven track record of building production-ready systems that generate real revenue. Specializes in secure backend architecture, payment infrastructure, and scalable microservices. Demonstrated ability to architect and deploy enterprise-grade solutions handling millions in transaction volume with zero security breaches.
-            </p>
-        </section>
-        
-        <!-- Two Column Layout -->
-        <div class="two-column">
-            <!-- Left Column -->
-            <div class="left-column">
-                <!-- Experience -->
-                <section class="section">
-                    <h2 class="section-title">Professional Experience</h2>
-                    
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <span class="exp-title">Founder & Lead Engineer</span>
-                            <span class="exp-date">2025 - Present</span>
-                        </div>
-                        <p class="exp-company">ESTECH Digital Systems Limited</p>
-                        <p class="exp-desc">
-                            Founded and lead development of multiple production systems serving real businesses. Architecting scalable solutions with focus on security and performance. Managing a portfolio of revenue-generating platforms.
-                        </p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <span class="exp-title">Lead Systems Architect</span>
-                            <span class="exp-date">2024 - 2025</span>
-                        </div>
-                        <p class="exp-company">Production Systems Development</p>
-                        <p class="exp-desc">
-                            Designed and implemented enterprise-grade backend systems for real business operations. Led development of multi-service platforms with payment processing, authentication, and business logic modules.
-                        </p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <span class="exp-title">Freelance Developer</span>
-                            <span class="exp-date">2023 - 2024</span>
-                        </div>
-                        <p class="exp-company">Independent</p>
-                        <p class="exp-desc">
-                            Built secure backend systems for various clients. Specialized in payment integrations, authentication systems, and API development. Developed expertise in security best practices.
-                        </p>
-                    </div>
-                </section>
-                
-                <!-- Projects -->
-                <section class="section">
-                    <h2 class="section-title">Notable Projects</h2>
-                    
-                    <div class="project-item">
-                        <div class="project-title">
-                            ESTECH Digital Ecosystem <a href="https://estech.cloud" class="project-link" target="_blank">estech.cloud</a>
-                        </div>
-                        <p class="project-desc">
-                            Multi-service digital platform with payment processing, AI-powered recruitment, and business intelligence modules. 4 integrated microservices handling real business operations.
-                        </p>
-                        <div class="project-tech">
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Redis</span>
-                            <span class="skill-tag">Docker</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-title">
-                            EUKS Express Delivery Platform <a href="https://eukexpress.com" class="project-link" target="_blank">eukexpress.com</a>
-                        </div>
-                        <p class="project-desc">
-                            Full-stack delivery management system with booking, real-time tracking, and payment gateway integration. B2C platform handling real delivery orders and transactions.
-                        </p>
-                        <div class="project-tech">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">MongoDB</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-title">
-                            Marshal Core of Nigeria Platform <a href="https://marshalcoreofnigeria.ng" class="project-link" target="_blank">marshalcoreofnigeria.ng</a>
-                        </div>
-                        <p class="project-desc">
-                            Security company management system for NSCDC-licensed company. End-to-end management platform covering 16+ Nigerian states with RBAC, incident management, and contract processing.
-                        </p>
-                        <div class="project-tech">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </section>
+        </div>
+    </header>
+    
+    <!-- Two Column Layout -->
+    <div class="two-col">
+        <!-- Left Column -->
+        <div class="col">
+            <!-- Summary -->
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Backend engineer with production experience building live payment systems and enterprise platforms. Currently heading Intelligence & IT at Mashaco Nigeria while building ESTECH Digital Systems. Specializes in secure backend architecture, payment processing, and scalable microservices.
+                </p>
             </div>
             
-            <!-- Right Column -->
-            <div class="right-column">
-                <!-- Skills -->
-                <section class="section">
-                    <h2 class="section-title">Technical Skills</h2>
-                    
-                    <div class="skill-category">
-                        <h4>Backend Development</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">GraphQL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Databases</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Redis</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Security & Auth</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">OAuth2</span>
-                            <span class="skill-tag">JWT</span>
-                            <span class="skill-tag">Bcrypt</span>
-                            <span class="skill-tag">2FA</span>
-                            <span class="skill-tag">SSL/TLS</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>DevOps & Cloud</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">CI/CD</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">Cloudflare</span>
-                            <span class="skill-tag">AWS</span>
-                        </div>
-                    </div>
-                </section>
+            <!-- Experience -->
+            <div class="section">
+                <h2>Experience</h2>
                 
-                <!-- Education -->
-                <section class="section">
-                    <h2 class="section-title">Education & Certifications</h2>
-                    
-                    <div class="edu-item">
-                        <p class="edu-title">National Diploma in Computer Science</p>
-                        <p class="edu-subtitle">Lagos State Polytechnic</p>
-                        <p class="edu-date">2021 - 2024</p>
-                    </div>
-                    
-                    <div class="edu-item">
-                        <p class="edu-title">Backend Development Certification</p>
-                        <p class="edu-subtitle">SAIL Innovation Lab</p>
-                        <p class="edu-date">2024 - 2025 | DISTINCTION</p>
-                    </div>
-                </section>
+                <div class="section-title">Head of Intelligence & IT Department</div>
+                <div class="section-sub">Mashaco Nigeria | 2024 - Present</div>
+                <div class="section-desc">
+                    Leading IT operations and intelligence systems. Built and maintain live payment processing infrastructure serving 16+ Nigerian states. Managing security operations and platform development.
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Founder & Lead Engineer</div>
+                <div class="section-sub">ESTECH Digital Systems Limited | 2024 - Present</div>
+                <div class="section-desc">
+                    Building multi-service digital platform with internal revenue focus. Started as an idea in 2024, now growing into operational reality with payment and business intelligence services.
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="section">
+                <h2>Education</h2>
                 
-                <!-- Key Achievements -->
-                <section class="section">
-                    <h2 class="section-title">Key Achievements</h2>
-                    
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>3 Live Revenue-Generating Systems deployed and operational</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Zero security breaches across all production systems</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Payment infrastructure handling real financial transactions</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Multi-state coverage with 16+ Nigerian states</span>
-                    </div>
-                    <div class="achievement-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Enterprise security architecture with compliance focus</span>
-                    </div>
-                </section>
+                <div class="section-title">National Diploma in Computer Science</div>
+                <div class="section-sub">Lagos State Polytechnic | 2021-2024</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Backend Development Certification</div>
+                <div class="section-sub">SAIL Innovation Lab | 2024-2025 | DISTINCTION</div>
+            </div>
+            
+            <!-- Key Achievements -->
+            <div class="section">
+                <h2>Key Achievements</h2>
+                <ul class="achievements">
+                    <li>2+ Live Revenue Systems operational</li>
+                    <li>Zero security breaches across all production systems</li>
+                    <li>Live payment infrastructure processing real transactions</li>
+                    <li>16+ Nigerian states covered by platforms</li>
+                    <li>Part-time staff member while pursuing National University degree</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="col">
+            <!-- Technical Skills -->
+            <div class="section">
+                <h2>Technical Skills</h2>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Languages</div>
+                    <div class="skill-desc">Python, JavaScript, Node.js, SQL</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Frameworks</div>
+                    <div class="skill-desc">FastAPI, Express.js, React</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Databases</div>
+                    <div class="skill-desc">PostgreSQL, MongoDB, Redis</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">Security</div>
+                    <div class="skill-desc">JWT, Bcrypt, OAuth2, 2FA, SSL/TLS</div>
+                </div>
+                
+                <div class="skill-row">
+                    <div class="skill-title">DevOps</div>
+                    <div class="skill-desc">Docker, CI/CD, Linux, Cloudflare</div>
+                </div>
+            </div>
+            
+            <!-- Notable Projects -->
+            <div class="section">
+                <h2>Notable Projects</h2>
+                
+                <div class="project">
+                    <div class="project-title">Mashaco Nigeria Platform</div>
+                    <a href="https://marshalcoreofnigeria.ng" class="project-link" target="_blank">marshalcoreofnigeria.ng</a>
+                    <div class="project-desc">NSCDC-licensed security company platform with live payment processing, RBAC, incident management, and 16+ state coverage.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">SKD Data Center</div>
+                    <div class="project-desc">Integrated ecosystem with data management, business automation, and enterprise payment solutions.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">ESTECH Digital Systems</div>
+                    <a href="https://estech.cloud" class="project-link" target="_blank">estech.cloud</a>
+                    <div class="project-desc">Multi-service digital platform - still evolving and growing from 2024 idea to 2025 operational reality.</div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-title">EUKS Express</div>
+                    <a href="https://eukexpress.com" class="project-link" target="_blank">eukexpress.com</a>
+                    <div class="project-desc">Full-stack delivery platform with booking, real-time tracking, and payment gateway integration.</div>
+                </div>
             </div>
         </div>
     </div>
     
+    <!-- Footer -->
+    <div class="footer">
+        <p>Godwin W. Author | Senior Software Engineer | Lagos, Nigeria | 2025</p>
+    </div>
+    
     <!-- Download Button -->
-    <a href="javascript:window.print()" class="download-btn no-print">
+    <a href="javascript:window.print()" class="download-btn">
         <i class="fas fa-download"></i> Download CV
     </a>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </body>
 </html>
