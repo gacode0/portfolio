@@ -24,53 +24,53 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #111827; }
         ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
         /* Navigation */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 16px 0; background: rgba(17, 24, 39, 0.95);
+            padding: 12px 0; background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(10px); border-bottom: 1px solid #1f2937;
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; font-weight: 700; color: #60a5fa; text-decoration: none; }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { color: #9ca3af; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .logo { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; font-weight: 700; color: #60a5fa; text-decoration: none; }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: color 0.2s; }
         .nav-links a:hover { color: #f9fafb; }
-        .nav-cta { background: #2563eb; color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
+        .nav-cta { background: #2563eb; color: #fff !important; padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
         .nav-cta:hover { background: #1d4ed8; }
-        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-        .menu-toggle span { width: 24px; height: 2px; background: #9ca3af; }
+        .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 22px; height: 2px; background: #9ca3af; }
         
         /* Hero */
-        .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 60px; }
-        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: #60a5fa; margin-bottom: 20px; }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 80px 0 50px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; color: #60a5fa; margin-bottom: 16px; }
         .hero-badge .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
-        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
         .hero h1 span { color: #60a5fa; }
-        .hero-subtitle { font-size: 1.1rem; color: #9ca3af; margin-bottom: 28px; max-width: 480px; }
-        .hero-stats { display: flex; gap: 40px; margin-bottom: 32px; }
-        .stat-number { font-size: 2rem; font-weight: 800; color: #60a5fa; font-family: 'JetBrains Mono', monospace; }
-        .stat-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
-        .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+        .hero-subtitle { font-size: 1rem; color: #9ca3af; margin-bottom: 24px; max-width: 460px; }
+        .hero-stats { display: flex; gap: 32px; margin-bottom: 28px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; color: #60a5fa; font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.7rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+        .hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
         .btn-primary { background: #2563eb; color: #fff; }
         .btn-primary:hover { background: #1d4ed8; }
         .btn-secondary { background: #1f2937; color: #f9fafb; border: 1px solid #374151; }
         .btn-secondary:hover { background: #374151; }
         
         /* Code Block */
-        .code-window { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; }
-        .code-header { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid #374151; }
+        .code-window { background: #1f2937; border-radius: 10px; border: 1px solid #374151; overflow: hidden; }
+        .code-header { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,255,255,0.03); border-bottom: 1px solid #374151; }
         .code-dot { width: 10px; height: 10px; border-radius: 50%; }
         .code-dot.red { background: #ef4444; }
         .code-dot.yellow { background: #eab308; }
         .code-dot.green { background: #22c55e; }
-        .code-title { margin-left: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #6b7280; }
-        .code-body { padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; }
+        .code-title { margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #6b7280; }
+        .code-body { padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; line-height: 1.6; }
         .code-line { display: flex; }
-        .line-number { color: #4b5563; width: 24px; text-align: right; margin-right: 16px; }
+        .line-number { color: #4b5563; width: 20px; text-align: right; margin-right: 12px; }
         .keyword { color: #c084fc; }
         .function { color: #60a5fa; }
         .string { color: #4ade80; }
@@ -78,125 +78,128 @@
         .variable { color: #fb923c; }
         
         /* Sections */
-        section { padding: 80px 0; }
-        .section-header { text-align: center; margin-bottom: 48px; }
-        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
-        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 12px; }
-        .section-desc { color: #9ca3af; max-width: 500px; margin: 0 auto; }
+        section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+        .section-title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; margin-bottom: 10px; }
+        .section-desc { color: #9ca3af; max-width: 480px; margin: 0 auto; font-size: 0.9rem; }
         
         /* Projects Grid */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .project-card { background: #1f2937; border-radius: 12px; border: 1px solid #374151; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
         .project-card:hover { transform: translateY(-4px); border-color: #4b5563; }
         .project-card.featured { border-color: #2563eb; background: linear-gradient(180deg, rgba(37, 99, 235, 0.1) 0%, #1f2937 100%); }
-        .card-header { padding: 20px; border-bottom: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
-        .card-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .card-header { padding: 16px; border-bottom: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
         .card-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
         .card-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
         .card-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
-        .badge { padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; }
+        .badge { padding: 3px 8px; border-radius: 4px; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; }
         .badge.live { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
         .badge.revenue { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
         .badge.confidential { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
         .badge.dev { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
-        .card-body { padding: 20px; }
-        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-        .card-subtitle { color: #6b7280; font-size: 0.85rem; margin-bottom: 16px; }
-        .card-features { list-style: none; margin-bottom: 16px; }
-        .card-features li { padding: 6px 0; color: #9ca3af; font-size: 0.85rem; display: flex; align-items: flex-start; gap: 8px; }
-        .card-features li i { color: #60a5fa; margin-top: 3px; }
-        .card-footer { padding: 16px 20px; border-top: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
-        .tech-stack { display: flex; gap: 6px; flex-wrap: wrap; }
-        .tech-tag { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
-        .card-link { color: #60a5fa; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+        .badge.part-time { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+        .card-body { padding: 16px; }
+        .card-title { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+        .card-subtitle { color: #6b7280; font-size: 0.8rem; margin-bottom: 12px; }
+        .card-role { color: #60a5fa; font-size: 0.75rem; margin-bottom: 10px; font-weight: 600; }
+        .card-features { list-style: none; margin-bottom: 12px; }
+        .card-features li { padding: 4px 0; color: #9ca3af; font-size: 0.8rem; display: flex; align-items: flex-start; gap: 6px; }
+        .card-features li i { color: #60a5fa; margin-top: 2px; }
+        .card-footer { padding: 14px 16px; border-top: 1px solid #374151; display: flex; justify-content: space-between; align-items: center; }
+        .tech-stack { display: flex; gap: 4px; flex-wrap: wrap; }
+        .tech-tag { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; color: #9ca3af; }
+        .card-link { color: #60a5fa; text-decoration: none; font-size: 0.8rem; font-weight: 500; }
         .card-link:hover { text-decoration: underline; }
         
         /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-        .skill-box { background: #1f2937; border-radius: 10px; padding: 20px; border: 1px solid #374151; }
-        .skill-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 1.1rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+        .skill-box { background: #1f2937; border-radius: 10px; padding: 16px; border: 1px solid #374151; }
+        .skill-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 1rem; }
         .skill-icon.blue { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
         .skill-icon.green { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
         .skill-icon.purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
         .skill-icon.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
-        .skill-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-        .skill-tags span { background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #9ca3af; }
+        .skill-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+        .skill-tags span { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; color: #9ca3af; }
         
         /* Timeline */
-        .timeline { position: relative; max-width: 700px; margin: 0 auto; }
+        .timeline { position: relative; max-width: 650px; margin: 0 auto; }
         .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #374151; transform: translateX(-50%); }
-        .timeline-item { display: flex; margin-bottom: 32px; position: relative; }
+        .timeline-item { display: flex; margin-bottom: 28px; position: relative; }
         .timeline-item:nth-child(odd) { flex-direction: row-reverse; text-align: right; }
-        .timeline-content { width: 44%; background: #1f2937; padding: 20px; border-radius: 10px; border: 1px solid #374151; }
-        .timeline-dot { position: absolute; left: 50%; top: 20px; width: 12px; height: 12px; background: #60a5fa; border-radius: 50%; transform: translateX(-50%); }
-        .timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #60a5fa; margin-bottom: 6px; }
-        .timeline-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-        .timeline-desc { color: #9ca3af; font-size: 0.8rem; }
+        .timeline-content { width: 44%; background: #1f2937; padding: 16px; border-radius: 10px; border: 1px solid #374151; }
+        .timeline-dot { position: absolute; left: 50%; top: 16px; width: 10px; height: 10px; background: #60a5fa; border-radius: 50%; transform: translateX(-50%); }
+        .timeline-year { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #60a5fa; margin-bottom: 4px; }
+        .timeline-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+        .timeline-desc { color: #9ca3af; font-size: 0.75rem; }
         
         /* CV Section */
         .cv-section { background: #0f172a; }
-        .cv-preview { max-width: 800px; margin: 0 auto; background: #1f2937; border-radius: 16px; border: 1px solid #374151; overflow: hidden; }
-        .cv-header { background: #374151; padding: 32px; text-align: center; }
-        .cv-header h2 { font-size: 1.5rem; margin-bottom: 8px; }
-        .cv-header p { color: #9ca3af; font-size: 0.9rem; }
-        .cv-body { padding: 32px; }
-        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .cv-col h3 { font-size: 0.9rem; color: #60a5fa; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #374151; }
-        .cv-item { margin-bottom: 12px; }
-        .cv-item-title { font-weight: 600; font-size: 0.85rem; }
-        .cv-item-sub { color: #6b7280; font-size: 0.8rem; margin-bottom: 4px; }
-        .cv-item-desc { color: #9ca3af; font-size: 0.8rem; }
-        .cv-download { text-align: center; margin-top: 24px; }
+        .cv-preview { max-width: 800px; margin: 0 auto; background: #1f2937; border-radius: 14px; border: 1px solid #374151; overflow: hidden; }
+        .cv-header { background: #374151; padding: 28px; text-align: center; }
+        .cv-header h2 { font-size: 1.4rem; margin-bottom: 6px; }
+        .cv-header p { color: #9ca3af; font-size: 0.85rem; }
+        .cv-body { padding: 28px; }
+        .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .cv-col h3 { font-size: 0.85rem; color: #60a5fa; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #374151; }
+        .cv-item { margin-bottom: 10px; }
+        .cv-item-title { font-weight: 600; font-size: 0.8rem; }
+        .cv-item-sub { color: #6b7280; font-size: 0.75rem; margin-bottom: 3px; }
+        .cv-item-desc { color: #9ca3af; font-size: 0.75rem; }
+        .cv-download { text-align: center; margin-top: 20px; }
         
         /* Contact */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-        .contact-box { background: #1f2937; border-radius: 12px; padding: 32px; border: 1px solid #374151; }
-        .contact-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #374151; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .contact-box { background: #1f2937; border-radius: 12px; padding: 28px; border: 1px solid #374151; }
+        .contact-item { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid #374151; }
         .contact-item:last-child { border-bottom: none; }
-        .contact-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; color: #60a5fa; }
-        .contact-info h4 { font-size: 0.9rem; margin-bottom: 2px; }
-        .contact-info p, .contact-info a { color: #9ca3af; text-decoration: none; font-size: 0.85rem; }
+        .contact-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(96, 165, 250, 0.15); display: flex; align-items: center; justify-content: center; color: #60a5fa; }
+        .contact-info h4 { font-size: 0.85rem; margin-bottom: 1px; }
+        .contact-info p, .contact-info a { color: #9ca3af; text-decoration: none; font-size: 0.8rem; }
         .contact-info a:hover { color: #60a5fa; }
-        .social-links { display: flex; gap: 10px; margin-top: 20px; }
-        .social-link { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none; transition: all 0.2s; }
+        .social-links { display: flex; gap: 8px; margin-top: 16px; }
+        .social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #9ca3af; text-decoration: none; transition: all 0.2s; }
         .social-link:hover { background: #2563eb; color: #fff; }
         .contact-cta { text-align: center; }
-        .contact-cta h3 { font-size: 1.2rem; margin-bottom: 12px; }
-        .contact-cta p { color: #9ca3af; margin-bottom: 24px; }
+        .contact-cta h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .contact-cta p { color: #9ca3af; margin-bottom: 20px; font-size: 0.85rem; }
         
         /* Footer */
-        footer { padding: 32px 0; border-top: 1px solid #1f2937; text-align: center; }
-        footer p { color: #6b7280; font-size: 0.85rem; }
+        footer { padding: 28px 0; border-top: 1px solid #1f2937; text-align: center; }
+        footer p { color: #6b7280; font-size: 0.8rem; }
         
         /* Animations */
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+        .fade-in { opacity: 0; transform: translateY(16px); transition: all 0.4s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         
         /* Responsive */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; }
             .hero-visual { display: none; }
-            .timeline::before { left: 16px; }
-            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; text-align: left; padding-left: 40px; }
+            .timeline::before { left: 14px; }
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: row; text-align: left; padding-left: 34px; }
             .timeline-content { width: 100%; }
-            .timeline-dot { left: 16px; }
+            .timeline-dot { left: 14px; }
             .cv-grid, .contact-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
             .menu-toggle { display: flex; }
-            .hero-stats { gap: 24px; }
+            .hero-stats { gap: 20px; }
             .projects-grid { grid-template-columns: 1fr; }
+            .hero { padding-top: 70px; }
         }
         
         /* Mobile Menu */
-        .mobile-menu { position: fixed; top: 60px; left: 0; right: 0; background: #1f2937; padding: 20px; border-bottom: 1px solid #374151; transform: translateY(-100%); opacity: 0; transition: all 0.3s; z-index: 999; }
+        .mobile-menu { position: fixed; top: 52px; left: 0; right: 0; background: #1f2937; padding: 16px; border-bottom: 1px solid #374151; transform: translateY(-100%); opacity: 0; transition: all 0.3s; z-index: 999; }
         .mobile-menu.open { transform: translateY(0); opacity: 1; }
         .mobile-menu ul { list-style: none; }
-        .mobile-menu li { padding: 10px 0; }
-        .mobile-menu a { color: #f9fafb; text-decoration: none; font-weight: 500; }
+        .mobile-menu li { padding: 8px 0; }
+        .mobile-menu a { color: #f9fafb; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -241,7 +244,7 @@
                         Systems That Scale
                     </h1>
                     <p class="hero-subtitle">
-                        Senior Software Engineer with hands-on experience building live payment systems, security platforms, and enterprise applications. Currently heading Intelligence & IT at Mashaco Nigeria while growing ESTECH Digital Systems.
+                        Senior Software Engineer with hands-on experience building live payment systems, security platforms, and enterprise applications. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria.
                     </p>
                     <div class="hero-stats">
                         <div>
@@ -300,24 +303,55 @@
                 <p class="section-desc">I build systems that handle real money, real users, and real business operations.</p>
             </div>
             <div class="projects-grid">
-                <!-- Mashaco Nigeria - Primary -->
+                <!-- ESTECH Digital Systems Limited - PRIMARY -->
                 <div class="project-card featured fade-in">
                     <div class="card-header">
-                        <div class="card-icon blue"><i class="fas fa-shield-alt"></i></div>
+                        <div class="card-icon blue"><i class="fas fa-globe"></i></div>
                         <div class="card-badges">
                             <span class="badge live">Live</span>
                             <span class="badge revenue">Revenue</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Mashaco Nigeria</h3>
-                        <p class="card-subtitle">Security Company Platform</p>
+                        <h3 class="card-title">ESTECH Digital Systems Limited</h3>
+                        <p class="card-subtitle">My Registered Company (Primary Focus)</p>
+                        <p class="card-role">Founder & Lead Engineer | 2024 - Present</p>
                         <ul class="card-features">
-                            <li><i class="fas fa-check"></i> NSCDC-licensed security company platform</li>
+                            <li><i class="fas fa-check"></i> Building internal revenue infrastructure</li>
+                            <li><i class="fas fa-check"></i> Multi-service digital ecosystem</li>
+                            <li><i class="fas fa-check"></i> Started as idea (2024) → operational reality</li>
+                            <li><i class="fas fa-check"></i> Full-time priority & focus</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Marshal Core of Nigeria - PART TIME -->
+                <div class="project-card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon green"><i class="fas fa-shield-alt"></i></div>
+                        <div class="card-badges">
+                            <span class="badge live">Live</span>
+                            <span class="badge revenue">Revenue</span>
+                            <span class="badge part-time">Part-Time</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Marshal Core of Nigeria</h3>
+                        <p class="card-subtitle">Security Company Platform</p>
+                        <p class="card-role">Head of Intelligence & IT | Certificate & IT Assistant | 2024 - Present (Part-Time)</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> NSCDC-licensed security company</li>
                             <li><i class="fas fa-check"></i> Live payment processing system</li>
                             <li><i class="fas fa-check"></i> 16+ Nigerian states coverage</li>
-                            <li><i class="fas fa-check"></i> RBAC, incident management, contracts</li>
-                            <li><i class="fas fa-check"></i> My role: Head of Intelligence & IT Dept.</li>
+                            <li><i class="fas fa-check"></i> I train and manage people under me</li>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -326,14 +360,14 @@
                             <span class="tech-tag">Express</span>
                             <span class="tech-tag">MongoDB</span>
                         </div>
-                        <a href="https://marshalcoreofnigeria.ng" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                        <a href="https://marshalcoreofnigeria.ng" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
                     </div>
                 </div>
                 
                 <!-- SKD Data Center -->
                 <div class="project-card fade-in">
                     <div class="card-header">
-                        <div class="card-icon green"><i class="fas fa-server"></i></div>
+                        <div class="card-icon purple"><i class="fas fa-server"></i></div>
                         <div class="card-badges">
                             <span class="badge live">Live</span>
                             <span class="badge revenue">Revenue</span>
@@ -346,7 +380,6 @@
                             <li><i class="fas fa-check"></i> Data management solutions</li>
                             <li><i class="fas fa-check"></i> Business process automation</li>
                             <li><i class="fas fa-check"></i> Payment integration</li>
-                            <li><i class="fas fa-check"></i> Enterprise infrastructure</li>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -359,33 +392,7 @@
                     </div>
                 </div>
                 
-                <!-- ESTECH Digital -->
-                <div class="project-card fade-in">
-                    <div class="card-header">
-                        <div class="card-icon purple"><i class="fas fa-globe"></i></div>
-                        <div class="card-badges"><span class="badge dev">Evolving</span></div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">ESTECH Digital Systems</h3>
-                        <p class="card-subtitle">My Registered Company</p>
-                        <ul class="card-features">
-                            <li><i class="fas fa-check"></i> Built from idea (2024) → reality (2025)</li>
-                            <li><i class="fas fa-check"></i> Internal revenue generation platform</li>
-                            <li><i class="fas fa-check"></i> Multi-service digital ecosystem</li>
-                            <li><i class="fas fa-check"></i> Actively growing & evolving</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <div class="tech-stack">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://estech.cloud" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
-                    </div>
-                </div>
-                
-                <!-- EUKS Express -->
+                <!-- EUKS Express - Reference -->
                 <div class="project-card fade-in">
                     <div class="card-header">
                         <div class="card-icon blue"><i class="fas fa-truck"></i></div>
@@ -397,16 +404,14 @@
                         <ul class="card-features">
                             <li><i class="fas fa-check"></i> Booking, tracking, payment system</li>
                             <li><i class="fas fa-check"></i> Demonstrates full-stack capability</li>
-                            <li><i class="fas fa-check"></i> Payment gateway integration</li>
                         </ul>
                     </div>
                     <div class="card-footer">
                         <div class="tech-stack">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
                         </div>
-                        <a href="https://eukexpress.com" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.7rem"></i></a>
+                        <a href="https://eukexpress.com" class="card-link" target="_blank">Visit <i class="fas fa-external-link-alt" style="font-size:0.65rem"></i></a>
                     </div>
                 </div>
             </div>
@@ -458,7 +463,7 @@
                     <div class="timeline-content">
                         <p class="timeline-year">2021-2024</p>
                         <h3 class="timeline-title">ND Computer Science - DISTINCTION</h3>
-                        <p class="timeline-desc">Lagos State Polytechnic. Graduated with distinction. Developed foundational programming skills.</p>
+                        <p class="timeline-desc">Lagos State Polytechnic. Graduated with distinction.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
@@ -472,17 +477,17 @@
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-year">2024</p>
-                        <h3 class="timeline-title">Mashaco Nigeria</h3>
-                        <p class="timeline-desc">Joined as staff. Now heading Intelligence & IT Department. Built and maintain live payment systems.</p>
+                        <p class="timeline-year">2024 - Present</p>
+                        <h3 class="timeline-title">Marshal Core of Nigeria</h3>
+                        <p class="timeline-desc">Head of Intelligence & IT (Part-Time). Certificate & IT Assistant. Training and managing team members.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <p class="timeline-year">2025</p>
-                        <h3 class="timeline-title">ESTECH Digital Systems</h3>
-                        <p class="timeline-desc">Started as an idea (2024), now growing into reality. Building internal revenue infrastructure.</p>
+                        <p class="timeline-year">2024 - Present</p>
+                        <h3 class="timeline-title">ESTECH Digital Systems Limited</h3>
+                        <p class="timeline-desc">Founder & Lead Engineer (Primary). Building internal revenue infrastructure.</p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
@@ -490,7 +495,7 @@
                     <div class="timeline-content">
                         <p class="timeline-year">Present</p>
                         <h3 class="timeline-title">National University</h3>
-                        <p class="timeline-desc">Full-time student (2nd Semester) while building systems. Leading IT at Mashaco. Growing ESTECH.</p>
+                        <p class="timeline-desc">Full-time student (2nd Semester) while building systems.</p>
                     </div>
                 </div>
             </div>
@@ -515,20 +520,20 @@
                     <div class="cv-grid">
                         <div class="cv-col">
                             <h3>Summary</h3>
-                            <p style="color:#9ca3af;font-size:0.85rem;margin-bottom:20px;">
-                                Backend engineer with production experience building live payment systems and enterprise platforms. Currently heading Intelligence & IT at Mashaco Nigeria while building ESTECH Digital Systems. Specializes in secure backend architecture and scalable microservices.
+                            <p style="color:#9ca3af;font-size:0.8rem;margin-bottom:16px;">
+                                Backend engineer with production experience building live payment systems and enterprise platforms. Primary focus on ESTECH Digital Systems Limited while serving as Head of Intelligence & IT at Marshal Core of Nigeria. I train and manage teams, specialize in secure backend architecture.
                             </p>
                             
                             <h3>Experience</h3>
                             <div class="cv-item">
-                                <p class="cv-item-title">Head of Intelligence & IT Department</p>
-                                <p class="cv-item-sub">Mashaco Nigeria | 2024 - Present</p>
-                                <p class="cv-item-desc">Leading IT operations, building payment systems, managing 16+ state coverage.</p>
+                                <p class="cv-item-title">Founder & Lead Engineer</p>
+                                <p class="cv-item-sub">ESTECH Digital Systems Limited | 2024 - Present (Primary)</p>
+                                <p class="cv-item-desc">Building multi-service platform with internal revenue focus.</p>
                             </div>
                             <div class="cv-item">
-                                <p class="cv-item-title">Founder & Lead Engineer</p>
-                                <p class="cv-item-sub">ESTECH Digital Systems Limited | 2024 - Present</p>
-                                <p class="cv-item-desc">Building multi-service platform with internal revenue focus.</p>
+                                <p class="cv-item-title">Head of Intelligence & IT</p>
+                                <p class="cv-item-sub">Marshal Core of Nigeria | 2024 - Present (Part-Time)</p>
+                                <p class="cv-item-desc">Certificate & IT Assistant. Training and managing people. 16+ state coverage.</p>
                             </div>
                             
                             <h3>Education</h3>
@@ -559,10 +564,6 @@
                                 <p class="cv-item-title">Security</p>
                                 <p class="cv-item-desc">JWT, Bcrypt, OAuth2, 2FA, SSL/TLS</p>
                             </div>
-                            <div class="cv-item">
-                                <p class="cv-item-title">DevOps</p>
-                                <p class="cv-item-desc">Docker, CI/CD, Linux, Cloudflare</p>
-                            </div>
                             
                             <h3>Key Achievements</h3>
                             <div class="cv-item">
@@ -570,6 +571,7 @@
                                 <p class="cv-item-desc">Zero security breaches</p>
                                 <p class="cv-item-desc">Live payment infrastructure</p>
                                 <p class="cv-item-desc">16+ Nigerian states covered</p>
+                                <p class="cv-item-desc">Leading & training teams</p>
                             </div>
                         </div>
                     </div>
