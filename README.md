@@ -9,15 +9,14 @@ Building production-ready systems that solve real business problems.
 - **Portfolio**: https://gacode0.github.io/portfolio
 - **Resume**: https://gacode0.github.io/portfolio/cv.html
 - **ESTECH Cloud**: https://estech.cloud
-- **Marshal Core**: https://marshalcoreofnigeria.ng
-- **EukExpress**: https://eukexpress.com (Reference)
+- **Marshal Core**: https://marshalcoreofnigeria.ng (Reference)
+- **EukExpress**: https://eukexpress.com 
 
 ### Production Systems Built
 
 - **ESTECH Digital Ecosystem** - Multi-service platform with payment processing, recruitment systems, and business intelligence tools
-- **EliteCredit** - Enterprise financial platform with multi-tier membership, KYC compliance, and payment gateway integrations (Paystack, Flutterwave)
-- **Marshal Core of Nigeria Limited** - Registered security company platform with live payment processing
-- **EukExpress** - Full-stack delivery management with real-time tracking and payment integration (Reference Project)
+- **Marshal Core of Nigeria Limited** - Registered security company platform with live payment processing (Reference Project)
+- **EukExpress** - Full-stack delivery management with real-time tracking and payment integration 
 
 ### Core Skills
 
@@ -33,7 +32,7 @@ Building production-ready systems that solve real business problems.
 
 - **Founder & Software Engineer (Part-Time)** — ESTECH Digital Systems Limited (2024–Present)
 - **Junior Software Developer (Contract)** — Marshal Core of Nigeria Limited (2024–Present, Part-Time)
-
+- **Junior Software Developer (Contract)** — EukExpress (2025–Present, Part-Time)
 ### Education
 
 - **BSc Computer Science** — National Open University of Nigeria (Expected in 2028)
